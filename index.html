@@ -4,952 +4,308 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Catalyst's Playbook — Ananth Karthik S</title>
-<meta name="description" content="A 90-day personal branding execution plan for Ananth Karthik S.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'DM Sans', sans-serif; background: #FAFAF8; color: #1A1A1A; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-  pre { font-family: inherit; }
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.12); border-radius: 4px; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:#FAFAF8;color:#1A1A1A;-webkit-font-smoothing:antialiased}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.wrap{max-width:960px;margin:0 auto;padding:44px 24px}
+.center{text-align:center}
+
+/* Header */
+.hdr{text-align:center;margin-bottom:48px;animation:fadeIn .6s}
+.tag{color:#B8860B;font-size:11px;text-transform:uppercase;letter-spacing:.25em;font-weight:700}
+.serif{font-family:'Playfair Display',serif}
+h1{font-size:clamp(30px,5vw,50px);font-weight:900;line-height:1.1;margin:12px 0 10px}
+.sub{color:#6B6560;font-size:14px;max-width:520px;margin:0 auto;line-height:1.75}
+.bar{width:48px;height:3px;background:#B8860B;margin:20px auto 0;border-radius:2px}
+
+/* Nav */
+.nav{display:flex;gap:3px;margin-bottom:32px;overflow-x:auto;padding:4px;background:#fff;border-radius:12px;border:1px solid rgba(0,0,0,.08);box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.nav-btn{flex:1;min-width:fit-content;background:0;color:#6B6560;border:0;border-radius:9px;padding:10px 16px;cursor:pointer;font-size:13px;font-weight:600;font-family:inherit;transition:.25s;white-space:nowrap}
+.nav-btn.on{background:#1A1A1A;color:#fff}
+
+/* Cards */
+.card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:18px 22px;box-shadow:0 1px 3px rgba(0,0,0,.03);margin-bottom:12px}
+.card-flush{padding:0;overflow:hidden}
+
+/* Badges */
+.b{display:inline-block;padding:4px 11px;border-radius:20px;font-size:11px;font-weight:600}
+.b-li{background:rgba(10,102,194,.07);color:#0A66C2}
+.b-wa{background:rgba(37,161,98,.07);color:#25A162}
+.b-gd{background:rgba(184,134,11,.08);color:#B8860B}
+.b-pp{background:rgba(107,70,193,.07);color:#6B46C1}
+.b-ok{background:rgba(46,125,79,.08);color:#2E7D4F}
+.b-no{background:rgba(197,48,48,.07);color:#C53030}
+
+/* Grids */
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.g4{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+
+/* Sections */
+.sec{display:none;animation:fadeIn .5s}
+.sec.on{display:block}
+
+/* Pills */
+.pill{background:0;color:#6B6560;border:1.5px solid rgba(0,0,0,.08);border-radius:100px;padding:8px 22px;cursor:pointer;font-size:13px;font-weight:600;font-family:inherit;transition:.2s}
+.pill.on-dark{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.pill.on-li{background:#0A66C2;color:#fff;border-color:#0A66C2}
+.pill.on-wa{background:#25A162;color:#fff;border-color:#25A162}
+.pill.on-gd{background:#B8860B;color:#fff;border-color:#B8860B}
+
+/* Pillar cards */
+.pc{background:#fff;border:1.5px solid rgba(0,0,0,.08);border-radius:14px;padding:22px;cursor:pointer;transition:.3s}
+.pc.on{border-color:#B8860B;box-shadow:0 4px 20px rgba(0,0,0,.06)}
+.pc-detail{display:none;animation:fadeIn .3s;margin-top:12px}
+.pc.on .pc-detail{display:block}
+
+/* Coffee prompt */
+.coffee{background:rgba(184,134,11,.08);border-left:3px solid #B8860B;padding:10px 14px;border-radius:0 8px 8px 0;margin-bottom:12px}
+
+/* Week buttons */
+.wk{width:32px;height:32px;border-radius:8px;border:1.5px solid rgba(0,0,0,.08);background:0;color:#6B6560;cursor:pointer;font-size:12px;font-weight:700;font-family:inherit;transition:.2s}
+.wk.on{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+
+/* Table */
+.tbl{display:grid;grid-template-columns:56px 1fr 1fr}
+.tbl>div{padding:11px 12px;font-size:12px;border-bottom:1px solid rgba(0,0,0,.08)}
+.tbl .bl{border-left:1px solid rgba(0,0,0,.08)}
+.tbl .hd{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:#FAFAF8}
+
+/* Utility */
+.mt{margin-top:16px}.mb{margin-bottom:16px}.mb2{margin-bottom:24px}
+.muted{color:#6B6560}.dim{color:#A09A94}.gold{color:#B8860B}
+.li-c{color:#0A66C2}.wa-c{color:#25A162}.red-c{color:#C53030}.ok-c{color:#2E7D4F}
+.sm{font-size:13px}.xs{font-size:11px}.xxs{font-size:10px}
+.bold{font-weight:700}.semi{font-weight:600}
+.lbl{font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:700}
+.lh{line-height:1.7}.flex{display:flex}.gap{gap:8px}.wrap-f{flex-wrap:wrap}.aic{align-items:center}
+.pre{white-space:pre-wrap;word-break:break-word;font-family:inherit}
+.bdr-t{border-top:1px solid rgba(0,0,0,.08);padding-top:16px;margin-top:16px}
+.footer{text-align:center;margin-top:48px;padding-top:18px;border-top:1px solid rgba(0,0,0,.08)}
 </style>
 </head>
 <body>
-<div id="root"></div>
-<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-<script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
-<script type="text/babel">
-const { useState } = React;
-
-const C = {
-  bg:"#FAFAF8",card:"#FFFFFF",accent:"#1A1A1A",
-  gold:"#B8860B",goldSoft:"rgba(184,134,11,0.08)",goldBorder:"rgba(184,134,11,0.2)",
-  text:"#1A1A1A",muted:"#6B6560",dim:"#A09A94",
-  border:"rgba(0,0,0,0.08)",success:"#2E7D4F",successSoft:"rgba(46,125,79,0.08)",
-  li:"#0A66C2",liSoft:"rgba(10,102,194,0.07)",
-  wa:"#25A162",waSoft:"rgba(37,161,98,0.07)",
-  red:"#C53030",redSoft:"rgba(197,48,48,0.07)",
-  purple:"#6B46C1",purpleSoft:"rgba(107,70,193,0.07)",
-};
-
-// ─── 12 WEEK DETAILED CONTENT ───
-const weeks = [
-  // ===== MONTH 1: FOUNDATION =====
-  { wk:1, month:1, phase:"Foundation",
-    li: {
-      type:"Text Post", title:"Profile Launch + Soft Intro",
-      hook:"I spent my first month at Hindustan Aeronautics Limited folding drawings.",
-      copy:`I spent my first month at Hindustan Aeronautics Limited folding drawings.
-
-Not designing. Not engineering. Folding.
-
-Paper sizes. Filing systems. Reading blueprints someone else made. I remember thinking — what am I even doing here?
-
-But here's what that month actually taught me:
-
-Before you build anything, you need to understand the foundation someone else laid. Before you design, you need to read. Before you lead, you need to listen.
-
-25 years later, I still fold before I build.
-
-Whether it's a business, a team, or a relationship — I don't start with the answer. I start by understanding every piece of the machine.
-
-What was your "folding drawings" moment? That one thing that felt pointless at the time but became your foundation?`,
-      design: {
-        format:"Text-only post (no image needed — the story carries it)",
-        visual:"Clean. No graphic. Let LinkedIn's native text formatting do the work.",
-        palette:"N/A — pure text post performs best for personal stories",
-        font:"LinkedIn default. Use line breaks generously for readability on mobile.",
-        cta:"End with an open question to drive comments",
-      },
-      hashtags:"#Leadership #Engineering #CareerLessons #FirstJob",
-    },
-    wa: [
-      { day:"Mon", copy:"\"Before you build, learn to fold.\" — something I learned at HAL 25 years ago. Story on LinkedIn soon.", design:"Dark charcoal background (#1A1A1A). White serif text. Minimal. No image." },
-      { day:"Tue", copy:"Photo of AK at workspace/office — candid, not posed. Caption: \"Day 1 of sharing what I've learned. Let's see where this goes.\"", design:"Real photo. No filter. Natural light preferred. Add subtle white text overlay at bottom." },
-      { day:"Wed", copy:"\"The best engineers I know don't start with solutions. They start with questions.\"", design:"Warm cream background (#F5F0E6). Dark brown text. Centered. One line. Playfair Display feel." },
-      { day:"Thu", copy:"Throwback: Photo from engineering college days or early career. \"Where it all started. BITS Pilani, [year].\"", design:"Actual old photo. Slight warm tone edit. Small white caption at bottom." },
-      { day:"Fri", copy:"\"Grateful for [Name] who taught me that patience isn't passive — it's strategic.\" (Tag them if on WhatsApp)", design:"Soft green background (#E8F5E9). Dark text. Personal, warm." },
-      { day:"Sat", copy:"Weekend life photo — wildlife photography, family, nature. No caption needed. Let the visual speak.", design:"Full photo status. AK's wildlife photography or personal moment. Authentic." },
-    ]
-  },
-  { wk:2, month:1, phase:"Foundation",
-    li: {
-      type:"Carousel (5-6 slides)", title:"The CNC Factory Summers",
-      hook:"Every vacation, while other kids played, I disappeared into a CNC factory.",
-      copy:`Every vacation, while other kids played, I disappeared into a CNC factory.
-
-[SLIDE 1 — Cover]
-"The Boy in the Factory"
-How summer vacations shaped my engineering mind
-
-[SLIDE 2]
-Every year, two months in Bangalore. My elderly cousin owned a CNC factory. I'd show up at dawn and stay till they locked the gates.
-
-[SLIDE 3]
-I didn't understand half of what I saw. But I watched. I touched. I asked questions that probably annoyed everyone.
-
-[SLIDE 4]
-That factory taught me something school never could: the world is a machine. Every problem has parts. If you understand the parts, you can fix anything.
-
-[SLIDE 5]
-25 years into my career, I still approach every challenge the same way — dismantle it, understand each piece, then rebuild it better.
-
-[SLIDE 6 — CTA]
-What shaped your thinking before your career even started? I'd love to hear.`,
-      design: {
-        format:"Carousel — 6 slides, swipeable",
-        visual:"Clean, editorial. Each slide: solid background + text. No stock images.",
-        palette:"Slide 1: Dark navy (#1a2744) with gold accent text. Slides 2-5: Off-white (#FAF8F5) with dark text. Slide 6: Gold (#B8860B) background, white text.",
-        font:"Headlines: Playfair Display or similar serif, 28-32px. Body: Clean sans-serif (DM Sans/Satoshi), 16-18px. Left-aligned.",
-        cta:"Final slide asks a question + includes AK's name and tagline",
-      },
-      hashtags:"#SystemsThinking #Engineering #Curiosity #CareerJourney",
-    },
-    wa: [
-      { day:"Mon", copy:"\"The world is a machine. Every problem has parts.\" — something a CNC factory taught me when I was 14.", design:"Navy background. Gold text. One quote. Centered." },
-      { day:"Tue", copy:"New carousel on LinkedIn today — about the summers that shaped how I think. Link in bio.", design:"Screenshot/preview of carousel cover slide. Clean share." },
-      { day:"Wed", copy:"Photo from a meeting or work moment. \"Some problems need a whiteboard. Most need a conversation.\"", design:"Real work photo. White text overlay, bottom-left." },
-      { day:"Thu", copy:"\"I used to dismantle toys to see how they worked. Now I do the same with business problems.\"", design:"Warm beige background. Dark serif text. Playful but professional." },
-      { day:"Fri", copy:"Quick shoutout: \"If you haven't connected with [colleague's name], you should. One of the sharpest minds I know.\"", design:"Light sage green background. Dark text. Generous spacing." },
-      { day:"Sat", copy:"Personal/wildlife photo. Let it breathe. No text needed.", design:"Full photo. AK's photography work. No overlay." },
-    ]
-  },
-  { wk:3, month:1, phase:"Foundation",
-    li: {
-      type:"Text Post + Single Image", title:"The Drawing Folder",
-      hook:"My first assignment as a design engineer at HAL: learn to fold drawings.",
-      copy:`My first assignment as a design engineer at HAL: learn to fold drawings.
-
-For a month.
-
-Week 1: Paper sizes and folding techniques.
-Week 2: Filing systems. Fetching drawings for senior designers.
-Week 3: Reading drawings I didn't create.
-Week 4: Asking so many questions they probably regretted hiring me.
-
-I was frustrated. I had a degree. I wanted to design. Instead, I was folding paper.
-
-But that month gave me something no textbook could:
-
-→ Respect for the work that came before me
-→ The patience to learn before trying to lead
-→ The confidence to ask "why" until I truly understood
-
-When the senior designer finally let me touch AutoCAD, I wasn't just drawing lines. I was building on a foundation I understood completely.
-
-The best careers aren't built on shortcuts. They're built on foundations no one else was patient enough to lay.
-
-What's your "folding drawings" story?`,
-      design: {
-        format:"Text post with optional single image",
-        visual:"If using image: a clean, minimal graphic with the quote \"Learn to fold before you build\" on a dark background. Or no image — text posts with strong hooks outperform on LinkedIn.",
-        palette:"If graphic: Charcoal (#2D2D2D) background, cream text (#FAF8F5), thin gold line accent",
-        font:"Quote graphic: Serif heading (Playfair), sans-serif subtext. Large, generous whitespace.",
-        cta:"Direct question at the end to drive comments. Reply to every single comment.",
-      },
-      hashtags:"#Patience #Engineering #HAL #CareerGrowth #Leadership",
-    },
-    wa: [
-      { day:"Mon", copy:"\"Learn to fold before you build.\" — My first lesson at HAL.", design:"Black background. White text. Minimal. One line. Powerful." },
-      { day:"Tue", copy:"Photo from current workspace. \"Still folding. Still learning. 25 years later.\"", design:"Real photo. Warm tone. Small white text at bottom." },
-      { day:"Wed", copy:"\"The best careers aren't built on shortcuts.\"", design:"Cream background (#FAF8F5). Dark brown serif text. Clean and editorial." },
-      { day:"Thu", copy:"Old photo or drawing — anything from engineering days. \"2001. The drawing board. Before AutoCAD changed everything.\"", design:"Throwback photo with date stamp feel. Slightly warm filter." },
-      { day:"Fri", copy:"\"Connected two incredible people this week. Nothing makes me happier than watching the right conversation happen.\"", design:"Soft blue background (#E3F2FD). Dark text. Warm, genuine tone." },
-      { day:"Sat", copy:"Nature/wildlife shot from AK's photography. No text.", design:"Full photo. Let the artistry speak." },
-    ]
-  },
-  { wk:4, month:1, phase:"Foundation",
-    li: {
-      type:"Story Post (People Spotlight)", title:"First Catalyst Spotlight",
-      hook:"Three years ago, someone told me about a young engineer who couldn't get a break.",
-      copy:`Three years ago, someone told me about a young engineer who couldn't get a break.
-
-Great skills. Wrong connections. No one to vouch for him.
-
-I didn't know him well. But I'd seen enough resumes and enough talent to know — this person had something.
-
-I made one phone call. Introduced him to someone who was hiring.
-
-That "young engineer" is now leading a team of 15.
-
-I didn't mentor him. I didn't coach him. I didn't invest in him.
-
-I just connected the right person with the right opportunity at the right time.
-
-That's what I've learned matters most in 25 years:
-
-It's not about what you build. It's about who you put in the room.
-
-If you know someone who deserves a better shot — make the call. Be the catalyst.
-
-Tag someone in the comments who gave YOU that one introduction that changed everything.`,
-      design: {
-        format:"Text post — pure storytelling. No image needed.",
-        visual:"Let the narrative carry it. Text posts with human stories consistently outperform graphics on LinkedIn.",
-        palette:"N/A — native LinkedIn text",
-        font:"Natural. Short paragraphs. One-line sentences for impact. White space between thoughts.",
-        cta:"Double CTA: Ask them to tag someone + share their story. This drives reach.",
-      },
-      hashtags:"#PeopleFirst #Networking #Catalyst #Mentorship #Connections",
-    },
-    wa: [
-      { day:"Mon", copy:"\"It's not about what you build. It's about who you put in the room.\"", design:"Dark slate background (#334155). Clean white sans-serif text. Centered." },
-      { day:"Tue", copy:"New post on LinkedIn today — about one phone call that changed someone's career. Check it out.", design:"Simple text status. Cream background. Dark text. Teaser for LinkedIn post." },
-      { day:"Wed", copy:"Photo with a colleague or at an event. \"Good conversations > good presentations.\"", design:"Real photo. Candid moment. White text overlay at bottom." },
-      { day:"Thu", copy:"\"Someone once made a phone call that changed my career. I've been paying it forward ever since.\"", design:"Warm terracotta/clay background (#D4A574). Dark brown text. Reflective." },
-      { day:"Fri", copy:"\"If you're in [industry] and looking for [specific role/connection], DM me. I might know someone.\"", design:"White background. Bold dark text. Direct. Actionable." },
-      { day:"Sat", copy:"Weekend photo. Nature, family, or personal moment.", design:"Full photo. Authentic. No text needed." },
-    ]
-  },
-
-  // ===== MONTH 2: MOMENTUM =====
-  { wk:5, month:2, phase:"Momentum",
-    li: {
-      type:"Framework Post (Text + Graphic)", title:"The Machine Thinker",
-      hook:"I can't solve a problem unless I see the whole machine.",
-      copy:`I can't solve a problem unless I see the whole machine.
-
-When someone brings me a challenge — a broken process, a team conflict, a strategy that isn't working — I don't jump to the fix.
-
-I dismantle it.
-
-Here's my framework (stolen from 4 years of designing aero engine test beds at HAL):
-
-1. MAP THE MACHINE → What are ALL the moving parts? Not just the obvious ones.
-
-2. FIND THE FRICTION → Where is energy being wasted? What's grinding against what?
-
-3. TRACE THE CONNECTIONS → How does changing Part A affect Part B, C, and D?
-
-4. REBUILD FROM FIRST PRINCIPLES → Don't patch. Redesign. But only after you've understood.
-
-When you're in a test bed environment where one mistake can cost lives — you don't guess. You understand.
-
-I've applied this same thinking to business strategy, team building, and even relationships.
-
-What's your go-to framework for solving complex problems?`,
-      design: {
-        format:"Text post + supporting single-image graphic showing the 4-step framework",
-        visual:"Clean infographic. 4 steps in a vertical flow. Each step: icon + title + one-line description.",
-        palette:"White background, dark text (#1A1A1A). Gold accent (#B8860B) for step numbers. Thin dark lines connecting steps.",
-        font:"Step numbers: Large serif (Playfair), 48px, gold. Titles: Bold sans-serif 18px. Descriptions: Regular 14px, muted gray.",
-        cta:"Question at the end. Also: share the graphic as a carousel if engagement is strong.",
-      },
-      hashtags:"#SystemsThinking #ProblemSolving #Framework #Engineering #Strategy",
-    },
-    wa: [
-      { day:"Mon", copy:"\"Don't fix the symptom. Understand the machine.\" — How I approach every problem.", design:"Charcoal background. White text. One powerful line." },
-      { day:"Tue", copy:"Shared a framework on LinkedIn today that I've used for 25 years. Came from designing test beds where mistakes cost lives.", design:"Screenshot/preview of LinkedIn post or framework graphic." },
-      { day:"Wed", copy:"Behind-the-scenes: Photo at desk/whiteboard working through a problem. \"This is what my Monday actually looks like.\"", design:"Real candid photo. No staging. White text, bottom-left." },
-      { day:"Thu", copy:"\"The best leaders I've met don't have all the answers. They have better questions.\"", design:"Soft navy background (#1E3A5F). White serif text. Elegant." },
-      { day:"Fri", copy:"\"Introduced [Person A] to [Person B] today. Sometimes the best thing you can do is get out of the way and let two smart people talk.\"", design:"Sage green background. Dark text. Warm and genuine." },
-      { day:"Sat", copy:"Wildlife/nature photo. No caption.", design:"AK's photography. Full frame. Let it breathe." },
-    ]
-  },
-  { wk:6, month:2, phase:"Momentum",
-    li: {
-      type:"Opinion/Industry Post", title:"Industry Contrarian (Soft)",
-      hook:"Everyone talks about innovation. Almost nobody talks about maintenance.",
-      copy:`Everyone talks about innovation. Almost nobody talks about maintenance.
-
-In my 4 years at HAL working on aero engine test beds, I learned something counterintuitive:
-
-The most innovative thing you can do is maintain what already works.
-
-We had systems where 100% safety wasn't a target — it was the minimum. One failure wasn't a "learning opportunity." It was unacceptable.
-
-That taught me: real innovation isn't about the new thing. It's about understanding the existing thing so deeply that you know exactly where to improve it.
-
-Three types of design:
-→ Reverse engineering (understanding what exists)
-→ Incremental design (improving what exists)
-→ New product design (creating what doesn't exist)
-
-Most people want to skip to #3. The best engineers — and the best leaders — master #1 first.
-
-What do you think? Is the obsession with "disruption" causing us to neglect the power of deep understanding?`,
-      design: {
-        format:"Text post. Optional: simple graphic showing the 3 design types as a pyramid",
-        visual:"If graphic: clean pyramid with 3 layers. Reverse Engineering (wide base), Incremental (middle), New Product (top). Gold accent.",
-        palette:"Off-white background. Dark text. Gold for hierarchy accent.",
-        font:"Clean sans-serif for body. Serif for the three design type labels.",
-        cta:"Provocative question to spark debate in comments.",
-      },
-      hashtags:"#Innovation #Engineering #Leadership #DesignThinking",
-    },
-    wa: [
-      { day:"Mon", copy:"\"Real innovation isn't about the new thing. It's about understanding the existing thing deeply enough to improve it.\"", design:"Cream background. Dark serif text. 2-3 lines max." },
-      { day:"Tue", copy:"Posted something a bit spicy on LinkedIn today. Let's see if the engineering community agrees.", design:"Simple text teaser. Light gray background." },
-      { day:"Wed", copy:"Meeting/work photo. \"Today's whiteboard session ran 3 hours. Best kind of meeting — no slides, just thinking.\"", design:"Real photo. Candid. Small white caption." },
-      { day:"Thu", copy:"\"The three types of design: Reverse engineer → Improve → Create. Most people skip step 1. Don't.\"", design:"White background. Bold dark text. Numbered. Clean." },
-      { day:"Fri", copy:"Shoutout: \"[Name] has been doing incredible work in [space]. If you're in [industry], follow them.\"", design:"Soft background. Personal recommendation." },
-      { day:"Sat", copy:"Personal photo. Weekend life.", design:"Authentic. No text." },
-    ]
-  },
-  { wk:7, month:2, phase:"Momentum",
-    li: {
-      type:"People Spotlight #2", title:"Second Catalyst Story",
-      hook:"She had the skills. She didn't have the room.",
-      copy:`She had the skills. She didn't have the room.
-
-Two years ago, I met a product manager at an event. Sharp thinking. Clear communication. But stuck in a role that didn't match her potential.
-
-I didn't offer advice. I didn't promise anything.
-
-I just asked: "If you could work anywhere, what would you build?"
-
-Her answer was so specific, so passionate, that I immediately thought of someone who needed exactly that energy.
-
-One introduction later, she's now leading product for a team that's tripled in size.
-
-I didn't do the work. She did. I just opened a door she didn't know existed.
-
-Here's what 25 years have taught me:
-
-→ Talent is everywhere. Opportunity is not.
-→ The most powerful thing you can do for someone is believe in them before they've proven themselves.
-→ One right introduction > 100 motivational speeches.
-
-Who in your network deserves a door opened for them? Tag them.`,
-      design: {
-        format:"Text post — storytelling format. No image needed.",
-        visual:"Pure text. These human stories are LinkedIn gold. An image would dilute the intimacy.",
-        palette:"N/A — native text",
-        font:"Short paragraphs. Generous line breaks. Arrow (→) for key takeaways instead of bullets.",
-        cta:"Tag prompt at end drives massive reach. Respond to every tag personally.",
-      },
-      hashtags:"#Talent #Opportunity #PeopleFirst #Catalyst #Leadership",
-    },
-    wa: [
-      { day:"Mon", copy:"\"Talent is everywhere. Opportunity is not. Be the bridge.\"", design:"Dark teal background (#134E4A). White text. Centered. Powerful." },
-      { day:"Tue", copy:"Told a story on LinkedIn today about one introduction that changed someone's career. It's what I do.", design:"Cream background. Dark text. Teaser." },
-      { day:"Wed", copy:"Coffee meeting photo. \"Best meetings happen without agendas.\"", design:"Real photo. Warm tones. Small caption." },
-      { day:"Thu", copy:"\"Before I introduce two people, I ask myself: will this conversation make both of them better?\"", design:"Soft amber background (#FEF3C7). Dark text. Reflective." },
-      { day:"Fri", copy:"\"Looking for a strong [role] for a friend's startup. If you know someone, DM me.\"", design:"White background. Bold text. Actionable." },
-      { day:"Sat", copy:"Weekend. Nature or personal.", design:"Photo. No text." },
-    ]
-  },
-  { wk:8, month:2, phase:"Momentum",
-    li: {
-      type:"Carousel (8 slides)", title:"4 Years at HAL — Visual Story",
-      hook:"From drawing boards to aero engine test beds. 4 years that shaped everything.",
-      copy:`[SLIDE 1 — Cover]
-"4 Years at HAL"
-From drawing boards to aero engine test beds — the years that shaped everything.
-— Ananth Karthik
-
-[SLIDE 2 — Year 1]
-Year 1: The Drawing Board
-Folded drawings. Read blueprints. Asked questions that annoyed everyone. Foundation: laid.
-
-[SLIDE 3 — Year 1 continued]
-Once the senior designer trusted me, I touched AutoCAD for the first time. I wasn't just drawing lines — I understood what they meant.
-
-[SLIDE 4 — Year 2-3]
-I started exploring beyond my lane.
-60% reverse engineering
-20% incremental design
-20% new product design
-Most teammates did 100% reverse engineering. I couldn't resist understanding the whole machine.
-
-[SLIDE 5 — The Work]
-Structural components. Foundation work. Vibrations. Acoustics. Hydraulics. Integration. Installation. Testing. I wanted to touch every part of the system.
-
-[SLIDE 6 — Year 4]
-Trusted with monitoring an entire test bed construction at an Air Force base in northern India. Alone. The culmination of 4 years of relentless curiosity.
-
-[SLIDE 7 — The Lesson]
-"100% safety. Zero room for error."
-In a test bed, one mistake isn't a learning opportunity. It's unacceptable. This principle has shaped every decision I've made since.
-
-[SLIDE 8 — CTA]
-What was the job that shaped your professional DNA?
-I'd love to hear your story.
-— AK`,
-      design: {
-        format:"Carousel — 8 slides. Swipeable storytelling.",
-        visual:"Cinematic editorial feel. Each slide: solid color background + text. NO stock images. Think memoir, not presentation.",
-        palette:"Slide 1: Deep navy (#0F172A) + gold title. Slides 2-7: Alternate between off-white (#FAF8F5) with dark text and soft charcoal (#2D3748) with cream text. Slide 8: Gold (#B8860B) with white text.",
-        font:"Headlines: Playfair Display, 28-36px. Body: DM Sans, 16px. Year labels: Mono-style, uppercase, small (12px), gold color. Generous padding (60px+).",
-        cta:"Final slide: question + AK signature mark",
-      },
-      hashtags:"#HAL #AeroEngineering #TestBed #CareerStory #Engineering #Leadership",
-    },
-    wa: [
-      { day:"Mon", copy:"\"100% safety. Zero room for error.\" — The principle from HAL that runs my entire life.", design:"Navy background. White text. Clean." },
-      { day:"Tue", copy:"Just shared my HAL story as a carousel on LinkedIn. 4 years compressed into 8 slides.", design:"Carousel cover preview." },
-      { day:"Wed", copy:"Photo from work. \"Still the same curiosity. Just bigger machines.\"", design:"Real photo. Warm. Small text." },
-      { day:"Thu", copy:"\"Every machine is a system. Every system has a story. I learned to read both.\"", design:"Soft gray background. Dark serif text." },
-      { day:"Fri", copy:"\"This week I connected someone in manufacturing with someone in tech. Different worlds. Same problem. Magic.\"", design:"Green background. Dark text. Genuine." },
-      { day:"Sat", copy:"Weekend photo.", design:"Full photo. Authentic." },
-    ]
-  },
-
-  // ===== MONTH 3: AUTHORITY =====
-  { wk:9, month:3, phase:"Authority",
-    li: {
-      type:"Story Post + Image", title:"The Derby Car Story",
-      hook:"In engineering college, I built two cars. Neither had an engine.",
-      copy:`In engineering college, I built two cars. Neither had an engine.
-
-They were derby cars — full-fledged vehicles that rely entirely on gravity, design, and precision. You roll them down a slope. Speed and braking tell you everything about how well you engineered.
-
-No motor to hide behind. No power to compensate for poor design. Just physics and craft.
-
-We competed. We iterated. We broke things and rebuilt them better.
-
-And here's the thing I didn't realize then but see clearly now:
-
-Everything I've done since has been derby-car thinking.
-
-→ Strip away the noise. What's actually driving this forward?
-→ If you can't compensate with power, you better get the design right.
-→ Efficiency isn't about adding more. It's about wasting less.
-
-Whether it's building a team, launching a venture, or connecting two people who should meet — I still design without an engine.
-
-Let the fundamentals do the work.
-
-What's your derby car? The project that taught you more than any textbook?`,
-      design: {
-        format:"Text post + single supporting image",
-        visual:"Simple graphic: a minimalist line-art derby car silhouette on a clean background. Or an actual photo if available.",
-        palette:"If graphic: White background, dark charcoal line art, gold accent on wheels/highlight.",
-        font:"If graphic: 'Derby Car Thinking' in Playfair Display as small caption below the illustration.",
-        cta:"Open question drives comments. This post has high reshare potential.",
-      },
-      hashtags:"#Engineering #FirstPrinciples #Design #Innovation #Resourcefulness",
-    },
-    wa: [
-      { day:"Mon", copy:"\"No engine. Just design. That's how I learned to build.\"", design:"White background. Bold dark text. Minimal." },
-      { day:"Tue", copy:"New LinkedIn post about building cars without engines. Sounds weird. Read it.", design:"Teaser. Light background." },
-      { day:"Wed", copy:"Work moment photo. \"Three meetings today, three introductions made. Good day.\"", design:"Real photo. Candid. Small text." },
-      { day:"Thu", copy:"\"Efficiency isn't about adding more. It's about wasting less.\"", design:"Cream background. Serif text. Elegant." },
-      { day:"Fri", copy:"\"Met someone last week who reminded me why I do what I do. There's nothing like watching someone find their perfect role.\"", design:"Warm soft background. Personal." },
-      { day:"Sat", copy:"Nature/wildlife. No text.", design:"AK's photography." },
-    ]
-  },
-  { wk:10, month:3, phase:"Authority",
-    li: {
-      type:"Contrarian/Thought Leadership", title:"Stop Networking. Start Noticing.",
-      hook:"Unpopular opinion: Networking events are mostly useless.",
-      copy:`Unpopular opinion: Networking events are mostly useless.
-
-Not because the people are wrong. Because the intention is wrong.
-
-Most people go to networking events to GET something. A lead. A contact. A card.
-
-In 25 years, the most valuable connections I've made happened because I was paying attention, not because I was networking.
-
-→ I noticed a junior engineer who asked the kind of questions senior people avoided. I introduced her to someone who could challenge her.
-
-→ I noticed a founder struggling with a problem I'd seen solved in a different industry. I made one phone call.
-
-→ I noticed two people in my network who didn't know each other but absolutely should. I sent a text.
-
-Networking is transactional. Noticing is generous.
-
-Stop collecting contacts. Start paying attention to people.
-
-The right introduction at the right time is worth more than 500 business cards.
-
-Agree? Disagree? I'd love to hear how your best professional relationship started.`,
-      design: {
-        format:"Text post. No graphic needed — the controversial hook drives engagement.",
-        visual:"None. The 'Unpopular opinion' hook format performs extremely well on LinkedIn as plain text.",
-        palette:"N/A",
-        font:"Short punchy lines. One-sentence paragraphs. Arrow (→) for examples.",
-        cta:"Agree/disagree prompt drives massive comment engagement.",
-      },
-      hashtags:"#Networking #Relationships #Leadership #ProfessionalGrowth",
-    },
-    wa: [
-      { day:"Mon", copy:"\"Stop collecting contacts. Start paying attention to people.\"", design:"Dark background. White text. Bold." },
-      { day:"Tue", copy:"Posted something that might ruffle some feathers on LinkedIn. My take on why networking events don't work.", design:"Simple text teaser." },
-      { day:"Wed", copy:"Meeting photo. \"The best connections happen when you're not trying.\"", design:"Candid photo. Small caption." },
-      { day:"Thu", copy:"\"Networking is transactional. Noticing is generous.\"", design:"Soft purple background (#EDE9FE). Dark text." },
-      { day:"Fri", copy:"\"Two people I introduced 6 months ago are now working together. That's the best ROI I know.\"", design:"Green background. Warm text." },
-      { day:"Sat", copy:"Personal moment.", design:"Photo. No text." },
-    ]
-  },
-  { wk:11, month:3, phase:"Authority",
-    li: {
-      type:"Defining Post (Flagship)", title:"The Catalyst Manifesto",
-      hook:"I've never built my own empire. And I never plan to.",
-      copy:`I've never built my own empire. And I never plan to.
-
-In 25 years, I've designed aero engine test beds. Built derby cars without engines. Led teams at TCS, Cognizant, and Citec. And now I'm building Lenor Ventures.
-
-But the work I'm most proud of? None of that.
-
-It's the introductions.
-
-The phone calls where I said: "You two need to talk."
-The DMs where I said: "I know someone perfect for this."
-The coffees where I just listened — and then connected the dots.
-
-I'm not a mentor in the traditional sense. I don't coach people on their careers.
-
-I'm a catalyst.
-
-I accelerate what's already there. I see potential before it's obvious. And I put the right people in the right rooms.
-
-Here's what I believe:
-
-→ Trust is built before business begins.
-→ One right introduction outweighs a hundred cold pitches.
-→ The best way to grow is to help someone else grow first.
-
-If you're building something meaningful and need the right people around you — let's have a conversation.
-
-Not a pitch. A conversation.`,
-      design: {
-        format:"Text post — this is THE positioning post. No image needed. Let the words land.",
-        visual:"None. This is pure personal brand manifesto territory. Graphics would dilute it.",
-        palette:"N/A",
-        font:"Natural LinkedIn text. Short lines. Dashes for drama. Arrows for principles.",
-        cta:"Soft CTA: 'Let's have a conversation.' This is the post AK pins to Featured.",
-      },
-      hashtags:"#PersonalBrand #Catalyst #Leadership #Trust #PeopleFirst",
-    },
-    wa: [
-      { day:"Mon", copy:"\"I don't build empires. I accelerate the people who do.\"", design:"Black background. Gold text. One line. Powerful." },
-      { day:"Tue", copy:"Wrote something very personal on LinkedIn today. The most honest post I've ever shared.", design:"Cream background. Understated." },
-      { day:"Wed", copy:"Photo at an event or meeting. \"These conversations are what I live for.\"", design:"Real photo. Genuine moment." },
-      { day:"Thu", copy:"\"Trust is built before business begins.\"", design:"Dark background. White serif text. Clean." },
-      { day:"Fri", copy:"\"Made 3 introductions this week. None of them were asked for. All of them were needed.\"", design:"Sage green. Dark text." },
-      { day:"Sat", copy:"Weekend photo.", design:"Authentic. Personal." },
-    ]
-  },
-  { wk:12, month:3, phase:"Authority",
-    li: {
-      type:"Forward-Looking Post", title:"What's Next — Open Door",
-      hook:"12 weeks ago, I started sharing more of what I've learned. Here's what happened.",
-      copy:`12 weeks ago, I started sharing more of what I've learned. Here's what happened.
-
-I didn't go viral. I didn't become a "LinkedIn influencer." (Thank God.)
-
-But here's what DID happen:
-
-→ 14 introductions made. 6 led to real partnerships.
-→ 3 people told me a post helped them rethink how they approach problems.
-→ 1 person messaged me saying a connection I made changed their career.
-→ Dozens of conversations that wouldn't have happened otherwise.
-
-None of this came from a strategy deck. It came from showing up consistently and sharing what I actually think.
-
-So here's what I'm doing next:
-
-I'm doubling down on what I do best — connecting people who should know each other.
-
-If you're:
-→ A founder looking for the right talent
-→ A professional ready for a new challenge
-→ Someone with a problem you can't see around
-
-DM me. Let's talk. No pitch. No pressure. Just a conversation over coffee (virtual or otherwise).
-
-Because the best things I've ever been part of started with someone saying: "You should talk to Ananth."
-
-Let's make more of those moments.`,
-      design: {
-        format:"Text post with results. Consider a simple metric graphic if numbers are impressive.",
-        visual:"Optional: a clean, minimal scorecard graphic showing the numbers (14 intros, 6 partnerships, etc.)",
-        palette:"If graphic: White background, dark text, gold accent on the numbers.",
-        font:"Numbers: Large serif, gold. Labels: Small sans-serif, muted gray.",
-        cta:"This is the ultimate CTA post. DM-driving. Pin-worthy.",
-      },
-      hashtags:"#PersonalBrand #Catalyst #Reflection #Networking #Growth",
-    },
-    wa: [
-      { day:"Mon", copy:"\"The best things I've ever been part of started with: 'You should talk to Ananth.'\"", design:"Gold background (#B8860B). White text. Confident." },
-      { day:"Tue", copy:"12 weeks of sharing, connecting, and showing up. Wrote a reflection on LinkedIn.", design:"Simple teaser. Cream background." },
-      { day:"Wed", copy:"\"This is just the beginning.\"", design:"Black background. White text. Minimal. Forward-looking." },
-      { day:"Thu", copy:"Photo from the week. \"Every week, new conversations. Every conversation, new possibilities.\"", design:"Real photo. Warm. Small caption." },
-      { day:"Fri", copy:"\"Thank you for being here. For reading. For connecting. For trusting. Here's to the next 12 weeks.\"", design:"Soft warm background. Heartfelt." },
-      { day:"Sat", copy:"Personal celebration photo. \"Good week. Good people. Good life.\"", design:"Authentic moment. Genuine smile." },
-    ]
-  },
+<div class="wrap">
+  <div class="hdr">
+    <p class="tag">Personal branding blueprint</p>
+    <h1 class="serif">The Catalyst's<br>Playbook</h1>
+    <p class="sub">A 90-day execution plan for Ananth Karthik S. Complete with weekly copy, design directions, and WhatsApp status scripts. Built on the scriptless model.</p>
+    <div class="bar"></div>
+  </div>
+  <div class="nav" id="nav"></div>
+  <div id="app"></div>
+  <div class="footer"><p class="dim xs">The Catalyst's Playbook — Structure meets Authenticity</p></div>
+</div>
+<script>
+// ════════════════════════════════════════
+//  DATA
+// ════════════════════════════════════════
+var PILLS = [
+  {icon:"🔧",title:"The Engineer's Mind",tag:"How I see the world in systems",
+    desc:"Your curiosity, your habit of dismantling things to understand them. This is your origin story — the kid who couldn't leave a machine untouched.",
+    prompt:'"Tell me about a time you looked at a problem and everyone else saw chaos, but you saw a machine waiting to be understood."',
+    li:"Long-form stories, carousel breakdowns",wa:"Text status with a system-thinking quote + behind-the-scenes photo"},
+  {icon:"🤝",title:"The Catalyst",tag:"I accelerate the people who build.",
+    desc:"You place people. You connect dots others don't see. This is your superpower — trust first, business later. Relationships are your currency.",
+    prompt:'"Tell me about someone you believed in before anyone else did. What did you see that others missed?"',
+    li:"Spotlight posts on people you've backed",wa:"Photo status with the person you helped + a one-line shoutout"},
+  {icon:"✈️",title:"25 Years, Zero Shortcuts",tag:"From folding drawings to building test beds",
+    desc:"HAL, aero engine test beds, 100% safety — your career is a masterclass in patience and precision.",
+    prompt:'"What is something you were once frustrated about at work that later turned out to be the best lesson you ever received?"',
+    li:"Career milestone posts, 'What I learned' threads",wa:"Throwback photo status from career milestones with a short reflection"},
+  {icon:"🎯",title:"First Principles Thinker",tag:"I can't solve it unless I see the whole picture",
+    desc:"You don't jump to solutions. You need to see things holistically. This makes you the person others come to when things are stuck.",
+    prompt:'"When someone brings you a messy problem, what is the first thing you do? Walk me through your actual thinking."',
+    li:"Framework posts, 'How I approach X' formats",wa:"Quick text status: one problem-solving insight in 2-3 lines"}
 ];
 
-// ─── CONTENT PILLARS ───
-const pillars = [
-  { icon: "\u{1F527}", title: "The Engineer's Mind", tagline: "How I see the world in systems",
-    desc: "Your curiosity, your habit of dismantling things to understand them. This is your origin story \u2014 the kid who couldn't leave a machine untouched.",
-    prompt: "\"Tell me about a time you looked at a problem and everyone else saw chaos, but you saw a machine waiting to be understood.\"",
-    li: "Long-form stories, carousel breakdowns", wa: "Text status with a system-thinking quote + behind-the-scenes photo" },
-  { icon: "\u{1F91D}", title: "The Catalyst", tagline: "I accelerate the people who build.",
-    desc: "You place people. You connect dots others don't see. This is your superpower \u2014 trust first, business later. Relationships are your currency.",
-    prompt: "\"Tell me about someone you believed in before anyone else did. What did you see that others missed?\"",
-    li: "Spotlight posts on people you've backed", wa: "Photo status with the person you helped + a one-line shoutout" },
-  { icon: "\u2708\uFE0F", title: "25 Years, Zero Shortcuts", tagline: "From folding drawings to building test beds",
-    desc: "HAL, aero engine test beds, 100% safety \u2014 your career is a masterclass in patience and precision. The man who spent a month folding drawings and called it the best foundation he ever built.",
-    prompt: "\"What is something you were once frustrated about at work that later turned out to be the best lesson you ever received?\"",
-    li: "Career milestone posts, 'What I learned' threads", wa: "Throwback photo status from career milestones with a short reflection" },
-  { icon: "\u{1F3AF}", title: "First Principles Thinker", tagline: "I can't solve it unless I see the whole picture",
-    desc: "You don't jump to solutions. You need to see things holistically. This makes you the person others come to when things are stuck.",
-    prompt: "\"When someone brings you a messy problem, what is the first thing you do? Walk me through your actual thinking.\"",
-    li: "Framework posts, 'How I approach X' formats", wa: "Quick text status: one problem-solving insight in 2-3 lines" },
+var WKS=[
+{wk:1,m:1,ph:"Foundation",li:{ty:"Text Post",ti:"Profile Launch + Soft Intro",hk:"I spent my first month at Hindustan Aeronautics Limited folding drawings.",cp:"I spent my first month at Hindustan Aeronautics Limited folding drawings.\n\nNot designing. Not engineering. Folding.\n\nPaper sizes. Filing systems. Reading blueprints someone else made. I remember thinking — what am I even doing here?\n\nBut here's what that month actually taught me:\n\nBefore you build anything, you need to understand the foundation someone else laid. Before you design, you need to read. Before you lead, you need to listen.\n\n25 years later, I still fold before I build.\n\nWhether it's a business, a team, or a relationship — I don't start with the answer. I start by understanding every piece of the machine.\n\nWhat was your \"folding drawings\" moment?",ds:{format:"Text-only post (no image needed — the story carries it)",visual:"Clean. No graphic. Let LinkedIn's native text formatting do the work.",palette:"N/A — pure text post performs best for personal stories",font:"LinkedIn default. Line breaks for mobile readability.",cta:"End with an open question to drive comments"},ht:"#Leadership #Engineering #CareerLessons #FirstJob"},wa:[{d:"Mon",c:"\"Before you build, learn to fold.\" — something I learned at HAL 25 years ago.",s:"Dark charcoal bg (#1A1A1A). White serif text. Minimal."},{d:"Tue",c:"Photo of AK at workspace — candid. Caption: \"Day 1 of sharing what I've learned.\"",s:"Real photo. No filter. White text overlay at bottom."},{d:"Wed",c:"\"The best engineers I know don't start with solutions. They start with questions.\"",s:"Warm cream bg (#F5F0E6). Dark brown text. Centered."},{d:"Thu",c:"Throwback: Photo from BITS Pilani days. \"Where it all started.\"",s:"Old photo. Warm tone. Small white caption."},{d:"Fri",c:"\"Grateful for [Name] who taught me patience isn't passive — it's strategic.\"",s:"Soft green bg (#E8F5E9). Dark text. Personal."},{d:"Sat",c:"Weekend life photo — wildlife photography, family. No caption.",s:"Full photo. AK's photography. Authentic."}]},
+{wk:2,m:1,ph:"Foundation",li:{ty:"Carousel (6 slides)",ti:"The CNC Factory Summers",hk:"Every vacation, while other kids played, I disappeared into a CNC factory.",cp:"[SLIDE 1 — Cover]\n\"The Boy in the Factory\"\nHow summer vacations shaped my engineering mind\n\n[SLIDE 2]\nEvery year, two months in Bangalore. My cousin owned a CNC factory. I'd show up at dawn and stay till they locked the gates.\n\n[SLIDE 3]\nI didn't understand half of what I saw. But I watched. I asked questions that probably annoyed everyone.\n\n[SLIDE 4]\nThat factory taught me: the world is a machine. Every problem has parts. Understand the parts, fix anything.\n\n[SLIDE 5]\n25 years later, I still approach every challenge the same way — dismantle, understand, rebuild better.\n\n[SLIDE 6 — CTA]\nWhat shaped your thinking before your career started?",ds:{format:"Carousel — 6 slides, swipeable",visual:"Editorial feel. Solid background + text per slide. No stock images.",palette:"Slide 1: Navy (#1a2744) + gold. Slides 2-5: Off-white (#FAF8F5). Slide 6: Gold (#B8860B) + white.",font:"Headlines: Playfair Display, 28-32px. Body: DM Sans, 16-18px.",cta:"Final slide asks a question + AK signature"},ht:"#SystemsThinking #Engineering #Curiosity"},wa:[{d:"Mon",c:"\"The world is a machine. Every problem has parts.\" — a CNC factory taught me at 14.",s:"Navy bg. Gold text. One quote."},{d:"Tue",c:"New carousel on LinkedIn — about the summers that shaped how I think.",s:"Carousel cover preview."},{d:"Wed",c:"Photo from a meeting. \"Some problems need a whiteboard. Most need a conversation.\"",s:"Real photo. White text overlay."},{d:"Thu",c:"\"I used to dismantle toys. Now I do the same with business problems.\"",s:"Warm beige bg. Dark serif text."},{d:"Fri",c:"Shoutout: \"If you haven't connected with [colleague], you should.\"",s:"Sage green bg. Dark text."},{d:"Sat",c:"Wildlife photo. No text.",s:"Full photo. AK's photography."}]},
+{wk:3,m:1,ph:"Foundation",li:{ty:"Text Post + Image",ti:"The Drawing Folder",hk:"My first assignment as a design engineer at HAL: learn to fold drawings.",cp:"My first assignment as a design engineer at HAL: learn to fold drawings.\n\nFor a month.\n\nWeek 1: Paper sizes and folding techniques.\nWeek 2: Filing systems. Fetching drawings for senior designers.\nWeek 3: Reading drawings I didn't create.\nWeek 4: Asking so many questions they probably regretted hiring me.\n\nI was frustrated. I had a degree. I wanted to design. Instead, I was folding paper.\n\nBut that month gave me something no textbook could:\n\n→ Respect for the work that came before me\n→ The patience to learn before trying to lead\n→ The confidence to ask \"why\" until I truly understood\n\nThe best careers aren't built on shortcuts.\n\nWhat's your \"folding drawings\" story?",ds:{format:"Text post with optional single image",visual:"Minimal graphic: quote on dark background. Or pure text — strong hooks outperform.",palette:"Charcoal (#2D2D2D), cream text (#FAF8F5), gold line accent",font:"Serif heading, sans-serif subtext. Large whitespace.",cta:"Direct question. Reply to every comment."},ht:"#Patience #Engineering #HAL #CareerGrowth"},wa:[{d:"Mon",c:"\"Learn to fold before you build.\" — My first lesson at HAL.",s:"Black bg. White text. One line."},{d:"Tue",c:"Photo from workspace. \"Still folding. Still learning. 25 years later.\"",s:"Real photo. Warm tone. Small text."},{d:"Wed",c:"\"The best careers aren't built on shortcuts.\"",s:"Cream bg. Dark brown serif text."},{d:"Thu",c:"Old photo from engineering days. \"2001. The drawing board. Before AutoCAD.\"",s:"Throwback photo. Warm filter."},{d:"Fri",c:"\"Connected two incredible people this week. Nothing beats the right conversation.\"",s:"Soft blue bg (#E3F2FD). Dark text."},{d:"Sat",c:"Nature/wildlife shot. No text.",s:"Full photo. Let it breathe."}]},
+{wk:4,m:1,ph:"Foundation",li:{ty:"People Spotlight",ti:"First Catalyst Story",hk:"Three years ago, someone told me about a young engineer who couldn't get a break.",cp:"Three years ago, someone told me about a young engineer who couldn't get a break.\n\nGreat skills. Wrong connections. No one to vouch for him.\n\nI made one phone call. Introduced him to someone who was hiring.\n\nThat \"young engineer\" is now leading a team of 15.\n\nI didn't mentor him. I didn't coach him.\n\nI just connected the right person with the right opportunity at the right time.\n\nThat's what I've learned matters most in 25 years:\n\nIt's not about what you build. It's about who you put in the room.\n\nIf you know someone who deserves a better shot — make the call. Be the catalyst.\n\nTag someone who gave YOU that one introduction that changed everything.",ds:{format:"Text post — pure storytelling. No image.",visual:"Let the narrative carry it. Human stories are LinkedIn gold.",palette:"N/A — native text",font:"Short paragraphs. One-line sentences for impact.",cta:"Double CTA: Tag someone + share their story. Drives reach."},ht:"#PeopleFirst #Catalyst #Mentorship #Connections"},wa:[{d:"Mon",c:"\"It's not about what you build. It's about who you put in the room.\"",s:"Dark slate bg (#334155). White text."},{d:"Tue",c:"New LinkedIn post — one phone call that changed someone's career.",s:"Cream bg. Dark text. Teaser."},{d:"Wed",c:"Photo with a colleague. \"Good conversations > good presentations.\"",s:"Real photo. White text overlay."},{d:"Thu",c:"\"Someone once made a phone call that changed my career. Paying it forward.\"",s:"Warm terracotta bg (#D4A574). Dark text."},{d:"Fri",c:"\"In [industry] looking for [role]? DM me. I might know someone.\"",s:"White bg. Bold dark text. Actionable."},{d:"Sat",c:"Weekend photo. Nature, family.",s:"Full photo. Authentic."}]},
+{wk:5,m:2,ph:"Momentum",li:{ty:"Framework Post + Graphic",ti:"The Machine Thinker",hk:"I can't solve a problem unless I see the whole machine.",cp:"I can't solve a problem unless I see the whole machine.\n\nWhen someone brings me a challenge — a broken process, a team conflict — I don't jump to the fix.\n\nI dismantle it.\n\nHere's my framework (from 4 years of designing aero engine test beds at HAL):\n\n1. MAP THE MACHINE → What are ALL the moving parts?\n2. FIND THE FRICTION → Where is energy being wasted?\n3. TRACE THE CONNECTIONS → How does changing Part A affect Part B, C, D?\n4. REBUILD FROM FIRST PRINCIPLES → Don't patch. Redesign.\n\nWhen one mistake can cost lives — you don't guess. You understand.\n\nWhat's your go-to framework for solving complex problems?",ds:{format:"Text + supporting graphic showing the 4-step framework",visual:"Clean infographic. 4 steps vertical flow. Icon + title + one line each.",palette:"White bg, dark text. Gold (#B8860B) step numbers. Thin dark connecting lines.",font:"Step numbers: Playfair 48px gold. Titles: Bold sans 18px. Desc: 14px muted.",cta:"Question at end. Share as carousel if engagement is strong."},ht:"#SystemsThinking #ProblemSolving #Framework #Strategy"},wa:[{d:"Mon",c:"\"Don't fix the symptom. Understand the machine.\"",s:"Charcoal bg. White text. One line."},{d:"Tue",c:"Shared a 25-year-old framework on LinkedIn. From test beds where mistakes cost lives.",s:"Screenshot of framework graphic."},{d:"Wed",c:"Photo at desk/whiteboard. \"This is what my Monday looks like.\"",s:"Real candid photo. White text."},{d:"Thu",c:"\"The best leaders don't have all the answers. They have better questions.\"",s:"Soft navy bg (#1E3A5F). White serif text."},{d:"Fri",c:"\"Introduced [A] to [B] today. Sometimes just get out of the way and let two smart people talk.\"",s:"Sage green bg. Dark text."},{d:"Sat",c:"Wildlife/nature photo.",s:"AK's photography. Full frame."}]},
+{wk:6,m:2,ph:"Momentum",li:{ty:"Opinion/Industry Post",ti:"Innovation vs. Maintenance",hk:"Everyone talks about innovation. Almost nobody talks about maintenance.",cp:"Everyone talks about innovation. Almost nobody talks about maintenance.\n\nIn my 4 years at HAL: 100% safety wasn't a target — it was the minimum.\n\nThat taught me: real innovation isn't about the new thing. It's about understanding the existing thing so deeply that you know exactly where to improve.\n\nThree types of design:\n→ Reverse engineering (understanding what exists)\n→ Incremental design (improving what exists)\n→ New product design (creating what doesn't exist)\n\nMost people skip to #3. The best engineers master #1 first.\n\nIs the obsession with \"disruption\" causing us to neglect the power of deep understanding?",ds:{format:"Text post. Optional: pyramid graphic of 3 design types",visual:"Clean pyramid with 3 layers. Gold accent.",palette:"Off-white bg. Dark text. Gold hierarchy accent.",font:"Sans-serif body. Serif for design type labels.",cta:"Provocative question sparks debate."},ht:"#Innovation #Engineering #Leadership #DesignThinking"},wa:[{d:"Mon",c:"\"Real innovation = understanding the existing thing deeply enough to improve it.\"",s:"Cream bg. Dark serif text."},{d:"Tue",c:"Posted something spicy on LinkedIn. Let's see if the engineering community agrees.",s:"Light gray bg. Text teaser."},{d:"Wed",c:"Work photo. \"Whiteboard session ran 3 hours. Best kind of meeting — no slides.\"",s:"Real photo. Small white caption."},{d:"Thu",c:"\"Three types of design: Reverse engineer → Improve → Create. Don't skip step 1.\"",s:"White bg. Bold dark text."},{d:"Fri",c:"\"[Name] has been doing incredible work in [space]. Follow them.\"",s:"Soft bg. Personal recommendation."},{d:"Sat",c:"Personal photo.",s:"Authentic. No text."}]},
+{wk:7,m:2,ph:"Momentum",li:{ty:"People Spotlight #2",ti:"Second Catalyst Story",hk:"She had the skills. She didn't have the room.",cp:"She had the skills. She didn't have the room.\n\nTwo years ago — a product manager at an event. Sharp thinking. Stuck in a role below her potential.\n\nI asked: \"If you could work anywhere, what would you build?\"\n\nHer answer was so specific, so passionate, I immediately thought of someone who needed that energy.\n\nOne introduction later, she's leading product for a team that's tripled in size.\n\nI didn't do the work. She did. I just opened a door she didn't know existed.\n\n→ Talent is everywhere. Opportunity is not.\n→ The most powerful thing you can do is believe in someone before they've proven themselves.\n→ One right introduction > 100 motivational speeches.\n\nWho in your network deserves a door opened? Tag them.",ds:{format:"Text post — storytelling. No image.",visual:"Pure text. Human stories are LinkedIn gold.",palette:"N/A — native text",font:"Short paragraphs. Arrow (→) for takeaways.",cta:"Tag prompt drives massive reach."},ht:"#Talent #Opportunity #PeopleFirst #Catalyst"},wa:[{d:"Mon",c:"\"Talent is everywhere. Opportunity is not. Be the bridge.\"",s:"Dark teal bg (#134E4A). White text."},{d:"Tue",c:"Story on LinkedIn about one introduction that changed a career.",s:"Cream bg. Teaser."},{d:"Wed",c:"Coffee meeting photo. \"Best meetings happen without agendas.\"",s:"Real photo. Warm tones."},{d:"Thu",c:"\"Before I introduce two people: will this conversation make both of them better?\"",s:"Soft amber bg (#FEF3C7). Dark text."},{d:"Fri",c:"\"Looking for [role] for a friend's startup. DM me.\"",s:"White bg. Bold text. Actionable."},{d:"Sat",c:"Weekend. Nature or personal.",s:"Photo. No text."}]},
+{wk:8,m:2,ph:"Momentum",li:{ty:"Carousel (8 slides)",ti:"4 Years at HAL — Visual Story",hk:"From drawing boards to aero engine test beds. 4 years that shaped everything.",cp:"[SLIDE 1] \"4 Years at HAL\" — The years that shaped everything.\n\n[SLIDE 2] Year 1: The Drawing Board. Folded drawings. Read blueprints. Foundation: laid.\n\n[SLIDE 3] Once trusted, I touched AutoCAD. I wasn't just drawing lines — I understood what they meant.\n\n[SLIDE 4] Beyond my lane: 60% reverse engineering, 20% incremental, 20% new product design.\n\n[SLIDE 5] Structural components. Vibrations. Acoustics. Hydraulics. I wanted to touch every part.\n\n[SLIDE 6] Year 4: Monitoring an entire test bed at an Air Force base. Alone.\n\n[SLIDE 7] \"100% safety. Zero room for error.\" This principle shaped every decision since.\n\n[SLIDE 8] What was the job that shaped your professional DNA?",ds:{format:"Carousel — 8 slides. Swipeable memoir.",visual:"Cinematic editorial. Solid color bg + text. NO stock images.",palette:"Slide 1: Navy (#0F172A) + gold. Slides 2-7: Alternate off-white and charcoal. Slide 8: Gold + white.",font:"Headlines: Playfair 28-36px. Body: DM Sans 16px. Year labels: mono, uppercase, 12px, gold.",cta:"Final slide: question + AK signature"},ht:"#HAL #AeroEngineering #CareerStory #Engineering"},wa:[{d:"Mon",c:"\"100% safety. Zero room for error.\" — The principle from HAL that runs my life.",s:"Navy bg. White text."},{d:"Tue",c:"My HAL story in 8 slides on LinkedIn. 4 years compressed.",s:"Carousel cover preview."},{d:"Wed",c:"Work photo. \"Still the same curiosity. Just bigger machines.\"",s:"Real photo. Small text."},{d:"Thu",c:"\"Every machine is a system. Every system has a story. I read both.\"",s:"Soft gray bg. Dark serif text."},{d:"Fri",c:"\"Connected manufacturing + tech this week. Different worlds. Same problem. Magic.\"",s:"Green bg. Genuine."},{d:"Sat",c:"Weekend photo.",s:"Authentic."}]},
+{wk:9,m:3,ph:"Authority",li:{ty:"Story Post + Image",ti:"The Derby Car Story",hk:"In engineering college, I built two cars. Neither had an engine.",cp:"In engineering college, I built two cars. Neither had an engine.\n\nDerby cars — full vehicles relying on gravity, design, precision. Roll them down a slope. Speed and braking tell you everything.\n\nNo motor to hide behind. Just physics and craft.\n\nEverything since has been derby-car thinking.\n\n→ Strip the noise. What's actually driving this?\n→ Can't compensate with power? Get the design right.\n→ Efficiency isn't adding more. It's wasting less.\n\nWhether building a team, launching a venture, or connecting two people — I still design without an engine.\n\nLet the fundamentals do the work.\n\nWhat's your derby car?",ds:{format:"Text + minimalist line-art graphic of a derby car",visual:"Simple line-art silhouette on clean background.",palette:"White bg, charcoal line art, gold accent on wheels.",font:"'Derby Car Thinking' in Playfair as caption below illustration.",cta:"Open question. High reshare potential."},ht:"#Engineering #FirstPrinciples #Design #Resourcefulness"},wa:[{d:"Mon",c:"\"No engine. Just design. That's how I learned to build.\"",s:"White bg. Bold dark text."},{d:"Tue",c:"New post about building cars without engines. Sounds weird. Read it.",s:"Light bg. Teaser."},{d:"Wed",c:"Work photo. \"Three meetings, three introductions. Good day.\"",s:"Real photo. Small text."},{d:"Thu",c:"\"Efficiency isn't adding more. It's wasting less.\"",s:"Cream bg. Serif text."},{d:"Fri",c:"\"Met someone who reminded me why I do this. Watching someone find their role.\"",s:"Warm bg. Personal."},{d:"Sat",c:"Nature/wildlife.",s:"AK's photography."}]},
+{wk:10,m:3,ph:"Authority",li:{ty:"Contrarian Take",ti:"Stop Networking. Start Noticing.",hk:"Unpopular opinion: Networking events are mostly useless.",cp:"Unpopular opinion: Networking events are mostly useless.\n\nNot the people. The intention.\n\nMost people go to GET something. A lead. A card.\n\nIn 25 years, my best connections happened because I was paying attention, not networking.\n\n→ Noticed a junior engineer asking questions seniors avoided. Introduced her to someone who could challenge her.\n→ Noticed a founder with a problem I'd seen solved elsewhere. One phone call.\n→ Noticed two people who should know each other. Sent a text.\n\nNetworking is transactional. Noticing is generous.\n\nStop collecting contacts. Start paying attention to people.\n\nOne right introduction > 500 business cards.\n\nHow did your best professional relationship start?",ds:{format:"Text post. No graphic — the controversial hook drives engagement.",visual:"None. 'Unpopular opinion' hook performs extremely well as plain text.",palette:"N/A",font:"Short punchy lines. Arrow (→) for examples.",cta:"Agree/disagree drives massive comments."},ht:"#Networking #Relationships #Leadership"},wa:[{d:"Mon",c:"\"Stop collecting contacts. Start paying attention to people.\"",s:"Dark bg. White text. Bold."},{d:"Tue",c:"Posted something that might ruffle feathers. My take on networking events.",s:"Simple text teaser."},{d:"Wed",c:"Meeting photo. \"Best connections happen when you're not trying.\"",s:"Candid photo. Small caption."},{d:"Thu",c:"\"Networking is transactional. Noticing is generous.\"",s:"Soft purple bg (#EDE9FE). Dark text."},{d:"Fri",c:"\"Two people I introduced 6 months ago now work together. Best ROI I know.\"",s:"Green bg. Warm."},{d:"Sat",c:"Personal moment.",s:"Photo. No text."}]},
+{wk:11,m:3,ph:"Authority",li:{ty:"Flagship Post",ti:"The Catalyst Manifesto",hk:"I've never built my own empire. And I never plan to.",cp:"I've never built my own empire. And I never plan to.\n\nIn 25 years: aero engine test beds. Derby cars without engines. Teams at TCS, Cognizant, Citec. Now Lenor Ventures.\n\nBut the work I'm most proud of? None of that.\n\nIt's the introductions.\n\n\"You two need to talk.\"\n\"I know someone perfect for this.\"\nCoffees where I just listened — then connected the dots.\n\nI'm a catalyst.\n\nI accelerate what's already there. I see potential before it's obvious. I put the right people in the right rooms.\n\n→ Trust is built before business begins.\n→ One right introduction > a hundred cold pitches.\n→ The best way to grow is to help someone else grow first.\n\nIf you're building something meaningful — let's have a conversation.\n\nNot a pitch. A conversation.",ds:{format:"Text post — THE positioning post. No image. Let the words land.",visual:"None. Pure manifesto. Graphics would dilute it.",palette:"N/A",font:"Short lines. Dashes for drama. Arrows for principles.",cta:"Soft CTA: 'Let's have a conversation.' Pin to Featured."},ht:"#PersonalBrand #Catalyst #Leadership #Trust #PeopleFirst"},wa:[{d:"Mon",c:"\"I don't build empires. I accelerate the people who do.\"",s:"Black bg. Gold text. Powerful."},{d:"Tue",c:"Wrote something very personal on LinkedIn. Most honest post I've ever shared.",s:"Cream bg. Understated."},{d:"Wed",c:"Event/meeting photo. \"These conversations are what I live for.\"",s:"Real photo. Genuine."},{d:"Thu",c:"\"Trust is built before business begins.\"",s:"Dark bg. White serif text."},{d:"Fri",c:"\"Made 3 introductions this week. None asked for. All needed.\"",s:"Sage green. Dark text."},{d:"Sat",c:"Weekend photo.",s:"Authentic."}]},
+{wk:12,m:3,ph:"Authority",li:{ty:"Forward-Looking Post",ti:"What's Next — Open Door",hk:"12 weeks ago, I started sharing what I've learned. Here's what happened.",cp:"12 weeks ago, I started sharing more. Here's what happened.\n\nI didn't go viral. I didn't become a \"LinkedIn influencer.\" (Thank God.)\n\nBut:\n→ 14 introductions. 6 led to real partnerships.\n→ 3 people said a post changed how they think.\n→ 1 person said a connection I made changed their career.\n→ Dozens of conversations that wouldn't have happened.\n\nNone from a strategy deck. All from showing up consistently.\n\nSo here's what's next — doubling down on connecting people.\n\nIf you're:\n→ A founder looking for the right talent\n→ A professional ready for a new challenge\n→ Someone with a problem you can't see around\n\nDM me. Let's talk. No pitch. Just coffee.\n\nBecause the best things start with: \"You should talk to Ananth.\"\n\nLet's make more of those moments.",ds:{format:"Text post with results. Optional: minimal scorecard graphic.",visual:"Clean scorecard: 14 intros, 6 partnerships, etc.",palette:"White bg, dark text, gold accent on numbers.",font:"Numbers: Large serif gold. Labels: Small sans muted.",cta:"Ultimate CTA post. DM-driving. Pin-worthy."},ht:"#PersonalBrand #Catalyst #Reflection #Growth"},wa:[{d:"Mon",c:"\"The best things start with: 'You should talk to Ananth.'\"",s:"Gold bg (#B8860B). White text."},{d:"Tue",c:"12 weeks of sharing, connecting, showing up. Reflection on LinkedIn.",s:"Cream bg. Teaser."},{d:"Wed",c:"\"This is just the beginning.\"",s:"Black bg. White text. Forward-looking."},{d:"Thu",c:"Photo from the week. \"Every week, new conversations. New possibilities.\"",s:"Real photo. Warm. Small caption."},{d:"Fri",c:"\"Thank you for being here. For reading. For trusting. Here's to the next 12 weeks.\"",s:"Soft warm bg. Heartfelt."},{d:"Sat",c:"Personal celebration photo. \"Good week. Good people. Good life.\"",s:"Authentic. Genuine smile."}]}
 ];
 
-// ─── PROFILE DATA ───
-const profileBefore = {
-  headline:"Inventor | Nemophilist | Wildlife Photographer | Mentor",
-  banner:"Quality. Innovation. Cost. Delivery. — Endless Innovation",
-  about:"I've worn many hats — from consulting and client management to portfolio strategy...",
-  featured:["It is all in your Attitude!!","We have come across many people who harp upon why they charge..."],
-  issues:[
-    "Headline diluted — 'Nemophilist' and 'Wildlife Photographer' don't communicate professional value",
-    "Banner is generic corporate — tells no one what AK does for THEM",
-    "Featured posts are motivational/generic — not catalyst stories",
-    "Activity shows only 'Congrats!' comments from 10 months ago",
-    "No positioning — visitor doesn't know why they should care",
-    "About section reads like a resume, not a promise",
-  ]
-};
-const profileAfter = {
-  headline:"I accelerate the people who build companies | Founder, Lenor Ventures | 25 yrs Engineering → Strategy → People",
-  banner:"The Catalyst — Trust first. Business later. Connecting the right people to the right opportunities.",
-  about:`I spent 4 years at HAL designing aero engine test beds where a single mistake could be fatal. That taught me precision.\n\nI spent 8 years at TCS learning how to build systems at scale. That taught me patience.\n\nBut the most important thing I ever learned was this: the right person in the right role changes everything.\n\nToday, I don't build products. I accelerate the people who build them. I connect founders with talent, leaders with mentors, and ideas with the people who can make them real.\n\nIf you're building something meaningful, let's talk.`,
-  featured:[
-    "\"My first job was to fold drawings. For a month. Best foundation I ever built.\"",
-    "\"She had the skills. She didn't have the room. One intro changed everything.\"",
-    "\"I've never built my own empire. And I never plan to.\""
-  ],
-  improvements:[
-    "Headline instantly communicates the Catalyst value proposition",
-    "Banner reinforces trust-first philosophy — professional and clear",
-    "Featured posts showcase real stories from the 4 content pillars",
-    "About section tells a story arc: precision → patience → people",
-    "Clear CTA: 'If you're building something meaningful, let's talk'",
-    "Weekly activity builds trust and algorithmic reach",
-  ]
-};
+// ════════════════════════════════════════
+//  STATE
+// ════════════════════════════════════════
+var state = {sec:"overview", pill:0, wk:0, wtab:"li", pview:"before"};
 
-// ─── COMPONENTS ───
-function Badge({children,color}) {
-  const bg = color==="li"?C.liSoft:color==="wa"?C.waSoft:color==="red"?C.redSoft:color==="purple"?C.purpleSoft:C.goldSoft;
-  const fg = color==="li"?C.li:color==="wa"?C.wa:color==="red"?C.red:color==="purple"?C.purple:C.gold;
-  return <span style={{display:"inline-block",padding:"4px 11px",borderRadius:20,fontSize:11,fontWeight:600,background:bg,color:fg}}>{children}</span>;
-}
-function Card({children,style}) {
-  return <div style={{background:C.card,border:`1px solid ${C.border}`,borderRadius:14,padding:"18px 22px",boxShadow:"0 1px 3px rgba(0,0,0,0.03)",...style}}>{children}</div>;
+// ════════════════════════════════════════
+//  RENDER FUNCTIONS
+// ════════════════════════════════════════
+function esc(s){return s.replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+
+function renderNav(){
+  var tabs=[{id:"overview",l:"Overview"},{id:"profile",l:"Profile Mockup"},{id:"content",l:"Content Plan"},{id:"rhythm",l:"Weekly Rhythm"}];
+  document.getElementById("nav").innerHTML=tabs.map(function(t){
+    return '<button class="nav-btn'+(state.sec===t.id?' on':'')+'" onclick="go(\''+t.id+'\')">'+t.l+'</button>';
+  }).join("");
 }
 
-function WeekDetail({w}) {
-  const [tab,setTab]=useState("li");
-  const Btn=({id,label,color})=>(
-    <button onClick={()=>setTab(id)} style={{background:tab===id?color:"transparent",color:tab===id?"#fff":C.muted,border:`1.5px solid ${tab===id?color:C.border}`,borderRadius:100,padding:"7px 18px",cursor:"pointer",fontSize:12,fontWeight:600,fontFamily:"'DM Sans',sans-serif",transition:"all 0.2s"}}>{label}</button>
-  );
-  return (
-    <div style={{animation:"fadeIn 0.3s"}}>
-      <div style={{display:"flex",gap:8,flexWrap:"wrap",marginBottom:6}}>
-        <Badge color="purple">{w.li.type}</Badge>
-        <Badge color="gold">Month {w.month} · {w.phase}</Badge>
-      </div>
-      <h3 style={{fontFamily:"'Playfair Display',serif",fontSize:20,margin:"8px 0 4px",color:C.text}}>{w.li.title}</h3>
+function go(id){state.sec=id;renderNav();render()}
 
-      <div style={{display:"flex",gap:8,margin:"16px 0 14px"}}>
-        <Btn id="li" label="LinkedIn Post" color={C.li}/>
-        <Btn id="wa" label="WhatsApp Statuses" color={C.wa}/>
-        <Btn id="design" label="Design Brief" color={C.gold}/>
-      </div>
-
-      {tab==="li" && <div style={{animation:"fadeIn 0.3s"}}>
-        <Card style={{marginBottom:12,borderLeft:`3px solid ${C.li}`,borderRadius:0}}>
-          <p style={{color:C.li,fontSize:10,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.1em",margin:"0 0 6px"}}>Hook</p>
-          <p style={{color:C.text,fontSize:15,fontWeight:600,fontStyle:"italic",margin:0,lineHeight:1.5}}>{w.li.hook}</p>
-        </Card>
-        <Card>
-          <p style={{color:C.dim,fontSize:10,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.1em",margin:"0 0 8px"}}>Full copy</p>
-          <pre style={{fontFamily:"'DM Sans',sans-serif",fontSize:13,color:C.muted,margin:0,lineHeight:1.75,whiteSpace:"pre-wrap",wordBreak:"break-word"}}>{w.li.copy}</pre>
-        </Card>
-        <div style={{marginTop:10}}>
-          <p style={{color:C.dim,fontSize:11,margin:0}}>{w.li.hashtags}</p>
-        </div>
-      </div>}
-
-      {tab==="wa" && <div style={{animation:"fadeIn 0.3s",display:"flex",flexDirection:"column",gap:8}}>
-        {w.wa.map((s,i)=>(
-          <Card key={i} style={{display:"flex",gap:14,alignItems:"flex-start"}}>
-            <div style={{background:C.waSoft,color:C.wa,fontSize:10,fontWeight:700,padding:"4px 8px",borderRadius:6,whiteSpace:"nowrap",marginTop:2}}>{s.day}</div>
-            <div style={{flex:1}}>
-              <p style={{color:C.text,fontSize:13,margin:"0 0 6px",lineHeight:1.6}}>{s.copy}</p>
-              <p style={{color:C.dim,fontSize:11,margin:0,fontStyle:"italic"}}>Design: {s.design}</p>
-            </div>
-          </Card>
-        ))}
-      </div>}
-
-      {tab==="design" && <div style={{animation:"fadeIn 0.3s"}}>
-        <Card>
-          {Object.entries(w.li.design).map(([key,val])=>(
-            <div key={key} style={{marginBottom:14}}>
-              <p style={{color:C.gold,fontSize:10,fontWeight:700,textTransform:"uppercase",letterSpacing:"0.1em",margin:"0 0 4px"}}>{key}</p>
-              <p style={{color:C.muted,fontSize:13,margin:0,lineHeight:1.6}}>{val}</p>
-            </div>
-          ))}
-        </Card>
-      </div>}
-    </div>
-  );
+function render(){
+  var el=document.getElementById("app");
+  if(state.sec==="overview") el.innerHTML=renderOverview();
+  else if(state.sec==="profile") el.innerHTML=renderProfile();
+  else if(state.sec==="content") el.innerHTML=renderContent();
+  else if(state.sec==="rhythm") el.innerHTML=renderRhythm();
 }
 
-function ProfileMockup() {
-  const [view,setView]=useState("before");
-  const d = view==="before"?profileBefore:profileAfter;
-  const Pill=({a,label,onClick})=><button onClick={onClick} style={{background:a?C.accent:"transparent",color:a?"#fff":C.muted,border:`1.5px solid ${a?C.accent:C.border}`,borderRadius:100,padding:"8px 22px",cursor:"pointer",fontSize:13,fontWeight:600,fontFamily:"'DM Sans',sans-serif",transition:"all 0.2s"}}>{label}</button>;
-  return (
-    <div style={{animation:"fadeIn 0.5s"}}>
-      <p style={{color:C.muted,fontSize:13,marginBottom:18,lineHeight:1.7}}>Based on Ananth Karthik's current LinkedIn. Toggle to see the recommended transformation.</p>
-      <div style={{display:"flex",gap:8,marginBottom:20}}>
-        <Pill a={view==="before"} label="🔴 Current" onClick={()=>setView("before")}/>
-        <Pill a={view==="after"} label="🟢 Recommended" onClick={()=>setView("after")}/>
-      </div>
-      <Card style={{padding:0,overflow:"hidden",borderRadius:16,marginBottom:16}}>
-        <div style={{height:90,background:view==="before"?"linear-gradient(135deg,#1a5276,#2980b9)":`linear-gradient(135deg,${C.accent},#3d3d3d)`,display:"flex",alignItems:"center",justifyContent:"center",padding:"0 20px"}}>
-          <p style={{color:"#fff",fontSize:12,fontWeight:600,textAlign:"center",opacity:0.9,lineHeight:1.5}}>{d.banner}</p>
-        </div>
-        <div style={{padding:"0 22px 22px",marginTop:-28}}>
-          <div style={{width:64,height:64,borderRadius:"50%",background:view==="before"?"#2980b9":C.gold,border:`3px solid ${C.card}`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,fontWeight:700,color:"#fff",marginBottom:10}}>AK</div>
-          <h3 style={{fontSize:17,fontWeight:700,margin:"0 0 3px",fontFamily:"'Playfair Display',serif"}}>Ananth Karthik S</h3>
-          <p style={{color:view==="before"?C.muted:C.text,fontSize:12,margin:"0 0 5px",lineHeight:1.5,fontWeight:view==="after"?500:400}}>{d.headline}</p>
-          <p style={{color:C.dim,fontSize:11,margin:"0 0 10px"}}>Chennai, Tamil Nadu · 5,944 followers</p>
-          <div style={{borderTop:`1px solid ${C.border}`,paddingTop:14,marginBottom:14}}>
-            <p style={{fontSize:12,fontWeight:700,margin:"0 0 6px"}}>About</p>
-            <p style={{fontSize:12,color:C.muted,margin:0,lineHeight:1.7,whiteSpace:"pre-line"}}>{d.about}</p>
-          </div>
-          <div style={{borderTop:`1px solid ${C.border}`,paddingTop:14}}>
-            <p style={{fontSize:12,fontWeight:700,margin:"0 0 8px"}}>Featured</p>
-            <div style={{display:"flex",gap:8,overflowX:"auto"}}>
-              {d.featured.map((f,i)=>(<div key={i} style={{minWidth:160,background:C.bg,borderRadius:8,padding:"10px 12px",border:`1px solid ${C.border}`,fontSize:11,color:view==="before"?C.muted:C.text,lineHeight:1.5,fontStyle:view==="after"?"italic":"normal"}}>{f}</div>))}
-            </div>
-          </div>
-        </div>
-      </Card>
-      <Card>
-        <p style={{fontSize:10,fontWeight:700,color:view==="before"?C.red:C.success,margin:"0 0 10px",textTransform:"uppercase",letterSpacing:"0.08em"}}>{view==="before"?"🔴 Issues identified":"🟢 Improvements"}</p>
-        {(view==="before"?d.issues:d.improvements).map((x,i)=>(
-          <div key={i} style={{display:"flex",gap:8,alignItems:"flex-start",marginBottom:6}}>
-            <span style={{color:view==="before"?C.red:C.success,fontSize:13,marginTop:1}}>{view==="before"?"✕":"✓"}</span>
-            <p style={{color:C.muted,fontSize:12,margin:0,lineHeight:1.5}}>{x}</p>
-          </div>
-        ))}
-      </Card>
-    </div>
-  );
+function renderOverview(){
+  return '<div style="animation:fadeIn .5s">'+
+  '<div class="card" style="padding:28px 24px;margin-bottom:18px">'+
+    '<h2 class="serif" style="font-size:21px;margin-bottom:18px">Who is Ananth Karthik?</h2>'+
+    '<div class="g4" style="margin-bottom:22px">'+
+    [{l:"Positioning",v:"The Catalyst",i:"⚡"},{l:"Superpower",v:"Connecting the right people",i:"🤝"},{l:"Philosophy",v:"Trust first, business later",i:"💎"},{l:"Style",v:"Holistic systems thinker",i:"🔍"}].map(function(x){
+      return '<div style="background:#FAFAF8;border-radius:10px;padding:16px;border:1px solid rgba(0,0,0,.08)">'+
+        '<span style="font-size:18px">'+x.i+'</span>'+
+        '<p class="dim lbl" style="margin:7px 0 2px">'+x.l+'</p>'+
+        '<p class="serif bold" style="font-size:14px">'+x.v+'</p></div>';
+    }).join("")+'</div>'+
+    '<div class="bdr-t">'+
+      '<p class="dim lbl" style="margin-bottom:8px">The one-year answer</p>'+
+      '<p class="serif" style="font-size:17px;font-style:italic;line-height:1.5">"When someone says Ananth Karthik — what do people say next?"</p>'+
+      '<p class="gold bold" style="font-size:14px;margin-top:8px">→ "He sees potential before it\'s obvious — and connects it to the right opportunity."</p>'+
+    '</div></div>'+
+  '<div class="g2">'+
+    '<div class="card"><div class="flex aic gap" style="margin-bottom:10px"><div style="width:8px;height:8px;border-radius:50%;background:#0A66C2"></div><span class="li-c bold" style="font-size:14px">LinkedIn</span><span class="dim xs">— The Stage</span></div><p class="muted sm lh" style="margin-bottom:12px">Authority-building through storytelling, frameworks, and people spotlights. 2 posts per week + daily engagement.</p><span class="b b-li">2 posts/week</span></div>'+
+    '<div class="card"><div class="flex aic gap" style="margin-bottom:10px"><div style="width:8px;height:8px;border-radius:50%;background:#25A162"></div><span class="wa-c bold" style="font-size:14px">WhatsApp Status</span><span class="dim xs">— The Living Room Window</span></div><p class="muted sm lh" style="margin-bottom:12px">Daily presence. Quick insights, work moments, quotes, throwbacks, shoutouts. 1 status per day — raw and real.</p><span class="b b-wa">1 status/day</span></div>'+
+  '</div></div>';
 }
 
-// ─── MAIN APP ───
-function App() {
-  const [sec,setSec]=useState("overview");
-  const [pillar,setPillar]=useState(0);
-  const [wk,setWk]=useState(0);
-
-  const sections=[
-    {id:"overview",label:"Overview"},
-    {id:"profile",label:"Profile Mockup"},
-    {id:"pillars",label:"Pillars"},
-    {id:"method",label:"Method"},
-    {id:"calendar",label:"12-Week Content"},
-    {id:"rhythm",label:"Weekly Rhythm"},
-  ];
-
-  return (
-    <div style={{background:C.bg,minHeight:"100vh",fontFamily:"'DM Sans',sans-serif",color:C.text}}>
-      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-      <style>{`@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}*{box-sizing:border-box}pre{font-family:inherit}`}</style>
-
-      <div style={{maxWidth:960,margin:"0 auto",padding:"40px 24px"}}>
-        {/* Header */}
-        <div style={{textAlign:"center",marginBottom:44,animation:"fadeIn 0.6s"}}>
-          <p style={{color:C.gold,fontSize:11,textTransform:"uppercase",letterSpacing:"0.25em",marginBottom:12,fontWeight:700}}>Personal branding blueprint</p>
-          <h1 style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(30px,5vw,50px)",fontWeight:900,margin:"0 0 10px",lineHeight:1.1}}>The Catalyst's<br/>Playbook</h1>
-          <p style={{color:C.muted,fontSize:14,maxWidth:520,margin:"0 auto",lineHeight:1.75}}>A 90-day execution plan for Ananth Karthik S. Complete with weekly copy, design directions, and WhatsApp status scripts. Built on the scriptless model.</p>
-          <div style={{width:48,height:3,background:C.gold,margin:"20px auto 0",borderRadius:2}}/>
-        </div>
-
-        {/* Nav */}
-        <div style={{display:"flex",gap:3,marginBottom:32,overflowX:"auto",padding:4,background:C.card,borderRadius:12,border:`1px solid ${C.border}`,boxShadow:"0 1px 4px rgba(0,0,0,0.04)"}}>
-          {sections.map(s=>(
-            <button key={s.id} onClick={()=>setSec(s.id)} style={{flex:1,minWidth:"fit-content",background:sec===s.id?C.accent:"transparent",color:sec===s.id?"#fff":C.muted,border:"none",borderRadius:9,padding:"10px 14px",cursor:"pointer",fontSize:12,fontWeight:600,fontFamily:"'DM Sans',sans-serif",transition:"all 0.25s",whiteSpace:"nowrap"}}>{s.label}</button>
-          ))}
-        </div>
-
-        {/* OVERVIEW */}
-        {sec==="overview"&&<div style={{animation:"fadeIn 0.5s"}}>
-          <Card style={{marginBottom:18,padding:"28px 24px"}}>
-            <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:21,margin:"0 0 18px"}}>Who is Ananth Karthik?</h2>
-            <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(190px,1fr))",gap:10,marginBottom:22}}>
-              {[{l:"Positioning",v:"The Catalyst",i:"⚡"},{l:"Superpower",v:"Connecting the right people",i:"🤝"},{l:"Philosophy",v:"Trust first, business later",i:"💎"},{l:"Style",v:"Holistic systems thinker",i:"🔍"}].map((x,i)=>(
-                <div key={i} style={{background:C.bg,borderRadius:10,padding:16,border:`1px solid ${C.border}`}}>
-                  <span style={{fontSize:18}}>{x.i}</span>
-                  <p style={{color:C.dim,fontSize:10,textTransform:"uppercase",letterSpacing:"0.1em",margin:"7px 0 2px",fontWeight:700}}>{x.l}</p>
-                  <p style={{color:C.text,fontSize:14,fontWeight:700,margin:0,fontFamily:"'Playfair Display',serif"}}>{x.v}</p>
-                </div>
-              ))}
-            </div>
-            <div style={{borderTop:`1px solid ${C.border}`,paddingTop:18}}>
-              <p style={{color:C.dim,fontSize:10,textTransform:"uppercase",letterSpacing:"0.12em",margin:"0 0 8px",fontWeight:700}}>The one-year answer</p>
-              <p style={{color:C.text,fontSize:17,fontFamily:"'Playfair Display',serif",fontStyle:"italic",margin:0,lineHeight:1.5}}>"When someone says Ananth Karthik — what do people say next?"</p>
-              <p style={{color:C.gold,fontSize:14,marginTop:8,fontWeight:700}}>→ "He's the one who sees potential before it's obvious — and connects it to the right opportunity."</p>
-            </div>
-          </Card>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(250px,1fr))",gap:12}}>
-            {[
-              {platform:"LinkedIn",color:C.li,role:"The Stage",desc:"Authority-building through storytelling, frameworks, and people spotlights. 2 posts per week + daily engagement.",freq:"2 posts/week"},
-              {platform:"WhatsApp Status",color:C.wa,role:"The Living Room Window",desc:"Daily presence. Quick insights, work moments, quotes, throwbacks, shoutouts. 1 status per day — raw and real.",freq:"1 status/day"},
-            ].map((p,i)=>(
-              <Card key={i}>
-                <div style={{display:"flex",alignItems:"center",gap:8,marginBottom:10}}>
-                  <div style={{width:8,height:8,borderRadius:"50%",background:p.color}}/>
-                  <span style={{color:p.color,fontWeight:700,fontSize:14}}>{p.platform}</span>
-                  <span style={{color:C.dim,fontSize:11}}>— {p.role}</span>
-                </div>
-                <p style={{color:C.muted,fontSize:13,lineHeight:1.7,margin:"0 0 12px"}}>{p.desc}</p>
-                <Badge color={i===0?"li":"wa"}>{p.freq}</Badge>
-              </Card>
-            ))}
-          </div>
-        </div>}
-
-        {/* PROFILE MOCKUP */}
-        {sec==="profile"&&<ProfileMockup/>}
-
-        {/* PILLARS */}
-        {sec==="pillars"&&<div style={{animation:"fadeIn 0.5s"}}>
-          <p style={{color:C.muted,fontSize:13,marginBottom:18,lineHeight:1.7}}>Four territories AK owns. Every post and status maps to one of these. Tap to expand.</p>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",gap:10}}>
-            {pillars.map((p,i)=>(
-              <div key={i} onClick={()=>setPillar(i)} style={{background:C.card,border:`1.5px solid ${pillar===i?C.gold:C.border}`,borderRadius:14,padding:22,cursor:"pointer",transition:"all 0.3s",boxShadow:pillar===i?"0 4px 20px rgba(0,0,0,0.06)":"0 1px 3px rgba(0,0,0,0.03)"}}>
-                <div style={{fontSize:26,marginBottom:8}}>{p.icon}</div>
-                <h3 style={{color:C.text,fontSize:15,fontWeight:700,margin:"0 0 2px",fontFamily:"'Playfair Display',serif"}}>{p.title}</h3>
-                <p style={{color:C.gold,fontSize:11,fontStyle:"italic",margin:"0 0 10px"}}>{p.tagline}</p>
-                {pillar===i&&<div style={{animation:"fadeIn 0.3s"}}>
-                  <p style={{color:C.muted,fontSize:13,lineHeight:1.7,margin:"0 0 12px"}}>{p.desc}</p>
-                  <div style={{background:C.goldSoft,borderLeft:`3px solid ${C.gold}`,padding:"10px 14px",borderRadius:"0 8px 8px 0",marginBottom:12}}>
-                    <p style={{color:C.dim,fontSize:10,textTransform:"uppercase",letterSpacing:"0.1em",margin:"0 0 4px",fontWeight:700}}>☕ Coffee prompt</p>
-                    <p style={{color:C.text,fontSize:12,fontStyle:"italic",margin:0,lineHeight:1.5}}>{p.prompt}</p>
-                  </div>
-                  <div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
-                    <Badge color="li">{p.li}</Badge>
-                    <Badge color="wa">{p.wa}</Badge>
-                  </div>
-                </div>}
-              </div>
-            ))}
-          </div>
-        </div>}
-
-        {/* METHOD */}
-        {sec==="method"&&<div style={{animation:"fadeIn 0.5s"}}>
-          <Card style={{padding:"28px 24px",marginBottom:18}}>
-            <h2 style={{fontFamily:"'Playfair Display',serif",fontSize:22,margin:"0 0 6px"}}>The Scriptless Method</h2>
-            <p style={{color:C.muted,fontSize:13,marginBottom:28,lineHeight:1.7,maxWidth:550}}>We don't give AK a script. We give structure and a coffee prompt. He talks. We extract and polish. His words. Our structure.</p>
-            <div style={{display:"flex",flexDirection:"column",position:"relative"}}>
-              <div style={{position:"absolute",left:17,top:24,bottom:24,width:2,background:`linear-gradient(to bottom,${C.gold},${C.border})`}}/>
-              {[
-                {n:"01",l:"Structure",d:"Content pillar + coffee prompt. Not a script."},
-                {n:"02",l:"Record",d:"AK talks 5-10 min into his phone. Like explaining to a friend."},
-                {n:"03",l:"Extract",d:"We pull the gold — authentic lines, real stories, natural phrasing."},
-                {n:"04",l:"Polish",d:"Shaped into a LinkedIn post or WhatsApp status. His words. Our structure."},
-                {n:"05",l:"Publish",d:"AK reviews, approves. Minimal friction. Maximum authenticity."},
-              ].map((s,i)=>(
-                <div key={i} style={{display:"flex",gap:18,alignItems:"flex-start",padding:"14px 0"}}>
-                  <div style={{width:36,height:36,borderRadius:"50%",background:i===0?C.gold:C.card,color:i===0?"#fff":C.gold,display:"flex",alignItems:"center",justifyContent:"center",fontWeight:800,fontSize:12,flexShrink:0,zIndex:1,border:`2px solid ${C.gold}`}}>{s.n}</div>
-                  <div style={{paddingTop:3}}>
-                    <p style={{color:C.text,fontSize:15,fontWeight:700,margin:"0 0 2px"}}>{s.l}</p>
-                    <p style={{color:C.muted,fontSize:13,margin:0,lineHeight:1.5}}>{s.d}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Card>
-          <div style={{background:C.goldSoft,borderRadius:14,padding:28,border:`1px solid ${C.goldBorder}`,textAlign:"center"}}>
-            <p style={{color:C.gold,fontSize:11,textTransform:"uppercase",letterSpacing:"0.15em",fontWeight:700,margin:"0 0 4px"}}>Time from AK</p>
-            <p style={{color:C.text,fontSize:40,fontWeight:900,margin:"0 0 4px",fontFamily:"'Playfair Display',serif"}}>~2 hrs/month</p>
-            <p style={{color:C.muted,fontSize:13,margin:0}}>One recording session every two weeks. We do the rest.</p>
-          </div>
-        </div>}
-
-        {/* 12-WEEK CONTENT CALENDAR */}
-        {sec==="calendar"&&<div style={{animation:"fadeIn 0.5s"}}>
-          <p style={{color:C.muted,fontSize:13,marginBottom:18,lineHeight:1.7}}>Complete 12-week execution plan. Each week includes full LinkedIn copy, WhatsApp status scripts, and design briefs. Click any week to expand.</p>
-
-          {/* Month headers + week selectors */}
-          <div style={{display:"flex",gap:6,marginBottom:10,flexWrap:"wrap"}}>
-            {[{l:"Month 1: Foundation",w:[0,1,2,3]},{l:"Month 2: Momentum",w:[4,5,6,7]},{l:"Month 3: Authority",w:[8,9,10,11]}].map((m,mi)=>(
-              <div key={mi} style={{display:"flex",gap:4,alignItems:"center",flexWrap:"wrap"}}>
-                <span style={{fontSize:10,fontWeight:700,color:C.dim,textTransform:"uppercase",letterSpacing:"0.08em",marginRight:4}}>{m.l}:</span>
-                {m.w.map(wi=>(
-                  <button key={wi} onClick={()=>setWk(wi)} style={{
-                    width:32,height:32,borderRadius:8,border:`1.5px solid ${wk===wi?C.accent:C.border}`,
-                    background:wk===wi?C.accent:"transparent",color:wk===wi?"#fff":C.muted,
-                    cursor:"pointer",fontSize:12,fontWeight:700,fontFamily:"'DM Sans',sans-serif",transition:"all 0.2s"
-                  }}>{wi+1}</button>
-                ))}
-                {mi<2&&<div style={{width:1,height:20,background:C.border,margin:"0 6px"}}/>}
-              </div>
-            ))}
-          </div>
-
-          {/* Selected week detail */}
-          <div style={{marginTop:16}}>
-            <WeekDetail w={weeks[wk]}/>
-          </div>
-        </div>}
-
-        {/* WEEKLY RHYTHM */}
-        {sec==="rhythm"&&<div style={{animation:"fadeIn 0.5s"}}>
-          <p style={{color:C.muted,fontSize:13,marginBottom:18,lineHeight:1.7}}>Repeatable weekly cadence. Consistent, not exhausting.</p>
-          <Card style={{padding:0,overflow:"hidden",borderRadius:14}}>
-            <div style={{display:"grid",gridTemplateColumns:"56px 1fr 1fr",background:C.bg,borderBottom:`1px solid ${C.border}`}}>
-              <div style={{padding:10,textAlign:"center",fontSize:10,fontWeight:700,color:C.dim,letterSpacing:"0.1em"}}>DAY</div>
-              <div style={{padding:"10px 12px",fontSize:10,fontWeight:700,color:C.li,letterSpacing:"0.1em",borderLeft:`1px solid ${C.border}`}}>LINKEDIN</div>
-              <div style={{padding:"10px 12px",fontSize:10,fontWeight:700,color:C.wa,letterSpacing:"0.1em",borderLeft:`1px solid ${C.border}`}}>WHATSAPP STATUS</div>
-            </div>
-            {[
-              {day:"MON",li:"Engage — comment on 5 posts",wa:"Text insight status"},
-              {day:"TUE",li:"Publish — main post of the week",wa:"Work photo status"},
-              {day:"WED",li:"Engage — reply to all comments",wa:"Quote or reflection"},
-              {day:"THU",li:"—",wa:"Throwback photo or story"},
-              {day:"FRI",li:"Engage + connect new profiles",wa:"Shoutout or intro status"},
-              {day:"SAT",li:"—",wa:"Personal/life photo"},
-              {day:"SUN",li:"Record next week's coffee prompt",wa:"—"},
-            ].map((r,i)=>(
-              <div key={i} style={{display:"grid",gridTemplateColumns:"56px 1fr 1fr",borderBottom:i<6?`1px solid ${C.border}`:"none",background:r.day==="SAT"||r.day==="SUN"?C.bg:"transparent"}}>
-                <div style={{padding:"11px 8px",textAlign:"center",fontWeight:800,fontSize:11,color:r.day==="SAT"||r.day==="SUN"?C.dim:C.text}}>{r.day}</div>
-                <div style={{padding:"11px 12px",fontSize:12,color:r.li==="—"?C.dim:C.text,borderLeft:`1px solid ${C.border}`}}>{r.li}</div>
-                <div style={{padding:"11px 12px",fontSize:12,color:r.wa==="—"?C.dim:C.text,borderLeft:`1px solid ${C.border}`}}>{r.wa}</div>
-              </div>
-            ))}
-          </Card>
-          <div style={{marginTop:22,display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(170px,1fr))",gap:10}}>
-            {[{l:"LinkedIn Posts",v:"8-10/mo",s:"2-3 per week"},{l:"WhatsApp Statuses",v:"25-30/mo",s:"1 per day"},{l:"Introductions",v:"8-10/mo",s:"2 per week"},{l:"AK's Time",v:"~2 hrs/mo",s:"Recording sessions"}].map((x,i)=>(
-              <Card key={i} style={{textAlign:"center",padding:18}}>
-                <p style={{color:C.text,fontSize:28,fontWeight:900,margin:0,fontFamily:"'Playfair Display',serif"}}>{x.v}</p>
-                <p style={{color:C.text,fontSize:11,fontWeight:600,margin:"4px 0 1px"}}>{x.l}</p>
-                <p style={{color:C.dim,fontSize:10,margin:0}}>{x.s}</p>
-              </Card>
-            ))}
-          </div>
-        </div>}
-
-        <div style={{textAlign:"center",marginTop:48,paddingTop:18,borderTop:`1px solid ${C.border}`}}>
-          <p style={{color:C.dim,fontSize:11}}>The Catalyst's Playbook — Structure meets Authenticity</p>
-        </div>
-      </div>
-    </div>
-  );
+function renderProfile(){
+  var v=state.pview;
+  var bef={hl:"Inventor | Nemophilist | Wildlife Photographer | Mentor",bn:"Quality. Innovation. Cost. Delivery. — Endless Innovation",ab:"I've worn many hats — from consulting and client management to portfolio strategy...",ft:["It is all in your Attitude!!","We have come across many people who harp upon why they charge..."],items:["Headline diluted — 'Nemophilist' doesn't communicate value","Banner is generic corporate — tells no one what AK does","Featured posts are motivational/generic — not catalyst stories","Activity: only 'Congrats!' comments from 10 months ago","No positioning — visitor doesn't know why they should care","About reads like a resume, not a promise"]};
+  var aft={hl:"I accelerate the people who build companies | Founder, Lenor Ventures | 25 yrs Engineering → Strategy → People",bn:"The Catalyst — Trust first. Business later. Connecting the right people to the right opportunities.",ab:"I spent 4 years at HAL designing aero engine test beds where one mistake could be fatal. That taught me precision.\n\nI spent 8 years at TCS building systems at scale. That taught me patience.\n\nBut the most important thing I learned: the right person in the right role changes everything.\n\nToday, I accelerate the people who build. I connect founders with talent, leaders with mentors, ideas with the people who make them real.\n\nIf you're building something meaningful, let's talk.",ft:["\"My first job was to fold drawings. For a month.\"","\"She had the skills. She didn't have the room.\"","\"I've never built my own empire. And I never plan to.\""],items:["Headline instantly communicates the Catalyst value","Banner reinforces trust-first philosophy","Featured posts showcase real stories from content pillars","About tells a story arc: precision → patience → people","Clear CTA: 'If you're building something meaningful, let's talk'","Weekly activity builds trust and algorithmic reach"]};
+  var d=v==="before"?bef:aft;
+  var isB=v==="before";
+  return '<div style="animation:fadeIn .5s">'+
+    '<p class="muted sm lh mb">Based on Ananth Karthik\'s current LinkedIn. Toggle to see the transformation.</p>'+
+    '<div class="flex gap mb" style="margin-bottom:20px">'+
+      '<button class="pill'+(isB?' on-dark':'')+'" onclick="state.pview=\'before\';render()">🔴 Current</button>'+
+      '<button class="pill'+(!isB?' on-dark':'')+'" onclick="state.pview=\'after\';render()">🟢 Recommended</button>'+
+    '</div>'+
+    '<div class="card" style="padding:0;overflow:hidden;border-radius:16px;margin-bottom:16px">'+
+      '<div class="profile-banner" style="background:'+(isB?'linear-gradient(135deg,#1a5276,#2980b9)':'linear-gradient(135deg,#1A1A1A,#3d3d3d)')+'"><p style="color:#fff;font-size:12px;font-weight:600;text-align:center;opacity:.9;line-height:1.5">'+esc(d.bn)+'</p></div>'+
+      '<div style="padding:0 22px 22px">'+
+        '<div class="profile-avatar" style="background:'+(isB?'#2980b9':'#B8860B')+'">AK</div>'+
+        '<h3 class="serif bold" style="font-size:17px;margin-bottom:3px">Ananth Karthik S</h3>'+
+        '<p class="sm" style="color:'+(isB?'#6B6560':'#1A1A1A')+';margin-bottom:5px;line-height:1.5;font-weight:'+(isB?'400':'500')+'">'+esc(d.hl)+'</p>'+
+        '<p class="dim xs" style="margin-bottom:10px">Chennai, Tamil Nadu · 5,944 followers</p>'+
+        '<div class="bdr-t"><p class="xs bold" style="margin-bottom:6px">About</p><p class="muted xs lh" style="white-space:pre-line">'+esc(d.ab)+'</p></div>'+
+        '<div class="bdr-t"><p class="xs bold" style="margin-bottom:8px">Featured</p><div class="flex gap" style="overflow-x:auto">'+d.ft.map(function(f){
+          return '<div style="min-width:160px;background:#FAFAF8;border-radius:8px;padding:10px 12px;border:1px solid rgba(0,0,0,.08);font-size:11px;color:'+(isB?'#6B6560':'#1A1A1A')+';line-height:1.5;'+(isB?'':'font-style:italic')+'">'+esc(f)+'</div>';
+        }).join("")+'</div></div>'+
+      '</div></div>'+
+    '<div class="card">'+
+      '<p class="lbl '+(isB?'red-c':'ok-c')+'" style="margin-bottom:10px">'+(isB?'🔴 Issues identified':'🟢 Improvements')+'</p>'+
+      d.items.map(function(x){
+        return '<div class="flex" style="gap:8px;margin-bottom:6px;align-items:flex-start"><span style="color:'+(isB?'#C53030':'#2E7D4F')+';font-size:13px;margin-top:1px">'+(isB?'✕':'✓')+'</span><p class="muted" style="font-size:12px;line-height:1.5">'+esc(x)+'</p></div>';
+      }).join("")+
+    '</div></div>';
 }
 
+function renderContent(){
+  var ap=state.pill;
+  var aw=state.wk;
+  var at=state.wtab;
+  var w=WKS[aw];
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(React.createElement(App));
+  // Pillars section
+  var pillarsHTML='<p class="muted sm lh" style="margin-bottom:16px">Four content territories AK owns. Every post and status maps to one. Tap to expand.</p>'+
+    '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-bottom:32px">'+
+    PILLS.map(function(p,i){
+      var on=ap===i;
+      return '<div class="pc'+(on?' on':'')+'" onclick="state.pill='+i+';render()">'+
+        '<div style="font-size:26px;margin-bottom:8px">'+p.icon+'</div>'+
+        '<h3 class="serif bold" style="font-size:15px;margin-bottom:2px">'+esc(p.title)+'</h3>'+
+        '<p class="gold" style="font-size:11px;font-style:italic;margin-bottom:10px">'+esc(p.tag)+'</p>'+
+        '<div class="pc-detail">'+
+          '<p class="muted sm lh" style="margin-bottom:12px">'+esc(p.desc)+'</p>'+
+          '<div class="coffee"><p class="dim lbl" style="margin-bottom:4px">☕ Coffee prompt</p><p style="font-size:12px;font-style:italic;line-height:1.5">'+esc(p.prompt)+'</p></div>'+
+          '<div class="flex gap wrap-f"><span class="b b-li">LI: '+esc(p.li)+'</span><span class="b b-wa">WA: '+esc(p.wa)+'</span></div>'+
+        '</div></div>';
+    }).join("")+'</div>';
+
+  // Divider
+  var divHTML='<div style="border-top:2px solid rgba(0,0,0,.06);padding-top:28px;margin-bottom:16px"><h2 class="serif" style="font-size:20px;margin-bottom:4px">12-Week Execution Plan</h2><p class="muted sm">Full LinkedIn copy, WhatsApp status scripts, and design briefs for each week.</p></div>';
+
+  // Week selector
+  var months=[{l:"Month 1: Foundation",w:[0,1,2,3]},{l:"Month 2: Momentum",w:[4,5,6,7]},{l:"Month 3: Authority",w:[8,9,10,11]}];
+  var wkSelHTML='<div class="flex gap wrap-f aic" style="margin-bottom:20px">'+
+    months.map(function(m,mi){
+      return '<span class="dim" style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-right:2px">'+m.l+':</span>'+
+        m.w.map(function(wi){return '<button class="wk'+(aw===wi?' on':'')+'" onclick="state.wk='+wi+';state.wtab=\'li\';render()">'+(wi+1)+'</button>';}).join("")+
+        (mi<2?'<div style="width:1px;height:20px;background:rgba(0,0,0,.08);margin:0 6px"></div>':'');
+    }).join("")+'</div>';
+
+  // Week detail
+  var badges='<div class="flex gap wrap-f" style="margin-bottom:6px"><span class="b b-pp">'+esc(w.li.ty)+'</span><span class="b b-gd">Month '+w.m+' · '+esc(w.ph)+'</span></div>';
+  var title='<h3 class="serif" style="font-size:20px;margin:8px 0 4px">'+esc(w.li.ti)+'</h3>';
+  var tabs='<div class="flex gap" style="margin:16px 0 14px">'+
+    '<button class="pill'+(at==="li"?' on-li':'')+'" onclick="state.wtab=\'li\';render()">LinkedIn Post</button>'+
+    '<button class="pill'+(at==="wa"?' on-wa':'')+'" onclick="state.wtab=\'wa\';render()">WhatsApp Statuses</button>'+
+    '<button class="pill'+(at==="ds"?' on-gd':'')+'" onclick="state.wtab=\'ds\';render()">Design Brief</button></div>';
+
+  var detail='';
+  if(at==="li"){
+    detail='<div class="card" style="margin-bottom:12px;border-left:3px solid #0A66C2;border-radius:0">'+
+      '<p class="li-c lbl" style="margin-bottom:6px">Hook</p>'+
+      '<p class="semi" style="font-size:15px;font-style:italic;line-height:1.5">'+esc(w.li.hk)+'</p></div>'+
+      '<div class="card"><p class="dim lbl" style="margin-bottom:8px">Full copy</p>'+
+      '<pre class="muted sm" style="line-height:1.75;white-space:pre-wrap;word-break:break-word;font-family:inherit">'+esc(w.li.cp)+'</pre></div>'+
+      '<p class="dim xs" style="margin-top:10px">'+esc(w.li.ht)+'</p>';
+  } else if(at==="wa"){
+    detail=w.wa.map(function(s){
+      return '<div class="card flex" style="gap:14px;align-items:flex-start">'+
+        '<div style="background:rgba(37,161,98,.07);color:#25A162;font-size:10px;font-weight:700;padding:4px 8px;border-radius:6px;white-space:nowrap;margin-top:2px">'+esc(s.d)+'</div>'+
+        '<div style="flex:1"><p class="sm" style="margin-bottom:6px;line-height:1.6">'+esc(s.c)+'</p>'+
+        '<p class="dim xs" style="font-style:italic">Design: '+esc(s.s)+'</p></div></div>';
+    }).join("");
+  } else {
+    detail='<div class="card">'+Object.keys(w.li.ds).map(function(k){
+      return '<div style="margin-bottom:14px"><p class="gold lbl" style="margin-bottom:4px">'+k+'</p><p class="muted sm lh">'+esc(w.li.ds[k])+'</p></div>';
+    }).join("")+'</div>';
+  }
+
+  return '<div style="animation:fadeIn .5s">'+pillarsHTML+divHTML+wkSelHTML+badges+title+tabs+detail+'</div>';
+}
+
+function renderRhythm(){
+  var days=[{d:"MON",li:"Engage — comment on 5 posts",wa:"Text insight status"},{d:"TUE",li:"Publish — main post of the week",wa:"Work photo status"},{d:"WED",li:"Engage — reply to all comments",wa:"Quote or reflection"},{d:"THU",li:"—",wa:"Throwback photo or story"},{d:"FRI",li:"Engage + connect new profiles",wa:"Shoutout or intro status"},{d:"SAT",li:"—",wa:"Personal/life photo"},{d:"SUN",li:"Record next week's coffee prompt",wa:"—"}];
+  var stats=[{l:"LinkedIn Posts",v:"8-10/mo",s:"2-3 per week"},{l:"WhatsApp Statuses",v:"25-30/mo",s:"1 per day"},{l:"Introductions",v:"8-10/mo",s:"2 per week"},{l:"AK's Time",v:"~2 hrs/mo",s:"Recording sessions"}];
+
+  return '<div style="animation:fadeIn .5s">'+
+    '<p class="muted sm lh" style="margin-bottom:18px">Repeatable weekly cadence. Consistent, not exhausting.</p>'+
+    '<div class="card" style="padding:0;overflow:hidden;border-radius:14px">'+
+      '<div class="tbl"><div class="hd center" style="font-size:10px;color:#A09A94">DAY</div><div class="hd bl li-c">LINKEDIN</div><div class="hd bl wa-c">WHATSAPP STATUS</div></div>'+
+      days.map(function(r,i){
+        var off=r.d==="SAT"||r.d==="SUN";
+        return '<div class="tbl"><div class="center" style="font-weight:800;font-size:11px;color:'+(off?'#A09A94':'#1A1A1A')+'">'+r.d+'</div>'+
+          '<div class="bl" style="color:'+(r.li==="—"?'#A09A94':'#1A1A1A')+'">'+r.li+'</div>'+
+          '<div class="bl" style="color:'+(r.wa==="—"?'#A09A94':'#1A1A1A')+'">'+r.wa+'</div></div>';
+      }).join("")+'</div>'+
+    '<div class="g4" style="margin-top:22px">'+stats.map(function(x){
+      return '<div class="card center" style="padding:18px"><p class="serif" style="font-size:28px;font-weight:900">'+x.v+'</p><p class="semi xs" style="margin:4px 0 1px">'+x.l+'</p><p class="dim" style="font-size:10px">'+x.s+'</p></div>';
+    }).join("")+'</div></div>';
+}
+
+// ════════════════════════════════════════
+//  INIT
+// ════════════════════════════════════════
+renderNav();
+render();
 </script>
 </body>
 </html>
